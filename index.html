@@ -58,6 +58,16 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--dim);font-siz
 footer .foot{display:flex;gap:22px;flex-wrap:wrap;justify-content:space-between;align-items:center}
 footer a{color:var(--dim)}footer a:hover{color:var(--acc)}
 .small{font-size:12px;color:var(--dim)}
+.cta{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+@media(max-width:640px){
+ nav{height:auto;padding:10px 0;justify-content:center}
+ nav .links{margin-left:0;width:100%;justify-content:center;font-size:14px;gap:14px}
+ nav .links a{color:#a9b1c2;padding:6px 2px}
+ .hero{text-align:left;padding-top:48px}
+ .badges,.stats{justify-content:stretch}
+ .cta{justify-content:flex-start}
+ .contact{text-align:left}
+}
 </style>
 </head>
 <body>
@@ -82,6 +92,11 @@ footer a{color:var(--dim)}footer a:hover{color:var(--acc)}
     <div class="stat"><div class="n">±86</div><div class="l">tok/s (agent-run)</div></div>
     <div class="stat"><div class="n">260</div><div class="l">tok/s decode (262K ctx)</div></div>
     <div class="stat"><div class="n">0</div><div class="l">cloud-API's gebruikt</div></div>
+  </div>
+  <div class="cta">
+    <a class="btn" href="#showcase">Bekijk de film ▶</a>
+    <a class="btn ghost" href="#live">Live demo's</a>
+    <a class="btn ghost" href="mailto:robaslab@gmail.com">Contact</a>
   </div>
 </section>
 
