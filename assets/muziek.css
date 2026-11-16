@@ -1,0 +1,32 @@
+/* ═══ ROBAS MUZIEK — subpagina-stijl (bovenop app.css) ═══ */
+.mhero{padding:120px 0 40px}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:26px}
+.vcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;cursor:pointer;
+  transition:transform .3s,border-color .3s,box-shadow .3s;position:relative}
+.vcard:hover{transform:translateY(-4px);border-color:rgba(217,164,65,.45);box-shadow:var(--shadow)}
+.vcard img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.vcard .vt{padding:14px 16px;font-weight:600;font-size:.95rem}
+.vcard .vp{position:absolute;top:calc(50% - 46px);left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;
+  background:rgba(228,52,46,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(0,0,0,.5)}
+.vcard .vp i{width:0;height:0;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+
+.player{margin-top:26px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);backdrop-filter:var(--glass);overflow:hidden}
+.prow{display:flex;align-items:center;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .2s}
+.prow:last-child{border-bottom:none}
+.prow:hover{background:rgba(217,164,65,.06)}
+.prow.on{background:rgba(217,164,65,.10)}
+.pbtn{flex:0 0 34px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s}
+.prow:hover .pbtn,.prow.on .pbtn{border-color:var(--acc)}
+.pbtn i{width:0;height:0;border-left:11px solid var(--tx);border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:2px}
+.prow.on .pbtn i{border:none;width:11px;height:12px;border-left:4px solid var(--acc);border-right:4px solid var(--acc);margin-left:0}
+.pinfo{flex:1;min-width:0}
+.pinfo b{display:block;font-size:.95rem}
+.pinfo span{font-size:.78rem;color:var(--dim)}
+.pbar{flex:0 0 90px;height:4px;border-radius:2px;background:rgba(255,255,255,.10);overflow:hidden}
+.pbar u{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--acc))}
+.ptime{flex:0 0 44px;text-align:right;font-size:.8rem;color:var(--dim);font-variant-numeric:tabular-nums}
+
+.mbox{margin-top:34px;padding:30px;border:1px solid rgba(217,164,65,.3);border-radius:var(--r);
+  background:linear-gradient(135deg,rgba(217,164,65,.08),rgba(228,52,46,.06))}
+.mbox h3{margin-bottom:8px}
+@media(max-width:640px){.pbar{display:none}.mhero{padding:96px 0 24px}}
