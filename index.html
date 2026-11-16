@@ -4,161 +4,305 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Robas Lab — Lokale AI, echt werkend</title>
-<meta name="description" content="Robas Lab: Qwen3.8-Flash-Next 125B, lokaal op één RTX 5090. Showcase, live demo's, AI-diensten en automatisering door Robert Dingenouts.">
+<meta name="description" content="Robas Lab van Robert Dingenouts: 125 miljard parameters lokaal op één RTX 5090, zonder cloud. Showcase, live demo's, AI-diensten, freelance en sollicitatie.">
 <meta property="og:title" content="Robas Lab — Lokale AI, echt werkend">
-<meta property="og:description" content="125B-model, 1 GPU, geen cloud. Live demo's, showcase en diensten.">
-<style>
-:root{--bg:#0a0c10;--panel:#11151d;--tx:#f2f0eb;--dim:#8b93a5;--acc:#d9a441;--red:#e4342e;--line:#20262f}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--tx);font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
-a{color:var(--acc);text-decoration:none}
-.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-header{position:sticky;top:0;z-index:10;background:rgba(10,12,16,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;gap:22px;height:60px;flex-wrap:wrap}
-.brand{font-weight:800;letter-spacing:.5px;font-size:18px;color:var(--tx)}
-.brand b{color:var(--acc)}
-.brand .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);margin-left:4px;vertical-align:middle}
-nav .links{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}
-nav .links a{color:var(--dim);font-size:14px}
-nav .links a:hover{color:var(--tx)}
-.hero{padding:78px 0 40px;text-align:center}
-.hero h1{font-size:clamp(32px,6vw,58px);line-height:1.1;font-weight:800}
-.hero h1 span{color:var(--acc)}
-.hero p{max-width:640px;margin:20px auto 0;color:var(--dim);font-size:clamp(15px,2.2vw,19px)}
-.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
-.badge{border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;color:var(--dim);background:var(--panel)}
-.badge b{color:var(--acc)}
-section{padding:56px 0}
-h2{font-size:clamp(24px,3.4vw,34px);margin-bottom:8px}
-h2::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--red);margin-right:12px;vertical-align:middle}
-.sub{color:var(--dim);margin-bottom:26px;max-width:720px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:12px}
-.card h3{font-size:18px}
-.card p{color:var(--dim);font-size:15px}
-.tag{align-self:flex-start;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--acc);border:1px solid var(--acc);border-radius:6px;padding:3px 8px}
-.btn{display:inline-block;text-align:center;background:var(--acc);color:#171310;font-weight:700;border-radius:10px;padding:12px 20px;margin-top:auto}
-.btn:hover{filter:brightness(1.08)}
-.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--tx)}
-.btn.live{background:var(--red);color:#fff}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:20px}
-.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
-.stat .n{font-size:26px;font-weight:800;color:var(--acc)}
-.stat .l{font-size:12px;color:var(--dim);margin-top:4px}
-.video{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9}
-.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.timeline{border-left:2px solid var(--line);margin-left:8px;padding-left:22px;display:flex;flex-direction:column;gap:22px}
-.tl{position:relative}
-.tl::before{content:"";position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--acc)}
-.tl h4{font-size:16px}.tl span{color:var(--dim);font-size:14px}
-.contact{background:linear-gradient(135deg,#131722,#0e1117);border:1px solid var(--line);border-radius:20px;padding:40px;text-align:center}
-.contact .mail{font-size:clamp(20px,4vw,34px);font-weight:800;color:var(--acc);word-break:break-all}
-footer{border-top:1px solid var(--line);padding:34px 0;color:var(--dim);font-size:14px}
-footer .foot{display:flex;gap:22px;flex-wrap:wrap;justify-content:space-between;align-items:center}
-footer a{color:var(--dim)}footer a:hover{color:var(--acc)}
-.small{font-size:12px;color:var(--dim)}
-.cta{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap}
-@media(max-width:640px){
- nav{height:auto;padding:10px 0;justify-content:center}
- nav .links{margin-left:0;width:100%;justify-content:center;font-size:12.5px;gap:11px;flex-wrap:nowrap}
- nav .links a{color:#a9b1c2;padding:6px 0;white-space:nowrap}
- .hero{text-align:left;padding-top:48px}
- .badges{display:flex;flex-direction:column;align-items:stretch;gap:9px}
- .badge{text-align:center}
- .cta{justify-content:flex-start}
- .cta .btn{flex:1;text-align:center}
- .contact{text-align:left}
-}
-</style>
+<meta property="og:description" content="125B-model, 1 GPU, geen cloud. Showcase, live demo's en diensten — met meten voor beweren.">
+<meta property="og:image" content="https://robaslab.nl/media/poster-beehive.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%23e4342e'/%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23d9a441' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
 </head>
 <body>
+<div id="bar"></div>
+
 <header><div class="wrap"><nav>
   <span class="brand">ROB<b>AS</b> LAB<span class="dot"></span></span>
   <span class="links">
-    <a href="#showcase">Showcase</a><a href="#live">Live demo's</a><a href="#diensten">Diensten</a><a href="#over">Over</a><a href="#contact">Contact</a>
+    <a href="#showcase">Showcase</a><a href="#live">Live</a><a href="#diensten">Diensten</a><a href="#over">Over</a><a href="#contact">Contact</a>
   </span>
+  <button id="bgmBtn" aria-label="Achtergrondmuziek aan/uit" aria-pressed="false"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span><span class="t">Geluid</span></button>
 </nav></div></header>
 
+<canvas id="net"></canvas>
+
+<audio id="bgm" src="media/site-bgm.m4a" loop preload="none"></audio>
+<audio id="pre1" src="previews/preview-groove.m4a" preload="none"></audio>
+<audio id="pre2" src="previews/preview-finale.m4a" preload="none"></audio>
+
+<!-- ══ HERO ══ -->
 <section class="hero wrap">
-  <h1>Lokale AI.<br><span>Echt werkend.</span></h1>
-  <p>Robas Lab bewijst wat er vandaag lokaal kan: een 125-miljard-model op één RTX 5090, zonder cloud of API. Van complete simulaties tot kant-en-klare web-apps — gebouwd, getest en live opgenomen.</p>
-  <div class="badges">
+ <div class="hero-grid">
+  <div class="hero-main">
+  <span class="kicker rv">Robas Lab · Lokale-AI studio <span class="dot"></span></span>
+  <h1 class="rv" data-d="1">De slimste AI draait gewoon <em>hier.</em></h1>
+  <p class="lead rv" data-d="2">125 miljard parameters op één RTX 5090 — geen cloud, geen API-rekeningen, geen data weg. Ik bouw, meet en show wat lokale AI vandaag écht kan.</p>
+  <div class="cta rv" data-d="3">
+    <button class="btn gold" id="soundCTA">Beleef het met geluid ▶</button>
+    <a class="btn ghost" href="#showcase">Showcase bekijken</a>
+  </div>
+  <div class="badges rv" data-d="4">
     <span class="badge">Model <b>Qwen3.8-Flash-Next 125B</b></span>
-    <span class="badge">Quant <b>UD-IQ3_XXS (3-bit)</b></span>
+    <span class="badge">Quant <b>UD-IQ3_XXS</b></span>
     <span class="badge">Engine <b>Strata + DFlash2</b></span>
     <span class="badge">HW <b>1× RTX 5090 32GB</b></span>
+    <span class="badge">Context <b>262K · KV Q8</b></span>
   </div>
+  </div>
+  <div class="term rv" data-d="4" aria-hidden="true">
+    <div class="tbar"><i style="background:#f66"></i><i style="background:#fb5"></i><i style="background:#7bd88f"></i><span>robas@kiebel:~/lab — strata</span></div>
+    <pre id="tlog"></pre>
+  </div>
+ </div>
   <div class="stats">
-    <div class="stat"><div class="n">100</div><div class="l">HTML-apps zelf gebouwd</div></div>
-    <div class="stat"><div class="n">±86</div><div class="l">tok/s (agent-run)</div></div>
-    <div class="stat"><div class="n">260</div><div class="l">tok/s decode (262K ctx)</div></div>
-    <div class="stat"><div class="n">0</div><div class="l">cloud-API's gebruikt</div></div>
+    <div class="stat rv"><div class="n"><span class="cnt" data-to="125">0</span><small> miljard</small></div><div class="l">parameters, lokaal</div></div>
+    <div class="stat rv" data-d="1"><div class="n"><span class="cnt" data-to="261">0</span><small> t/s</small></div><div class="l">decode, gemeten op 262K context</div></div>
+    <div class="stat rv" data-d="2"><div class="n"><span class="cnt" data-to="100">0</span><small> apps</small></div><div class="l">HTML-pagina's in 1,18 uur gebouwd</div></div>
+    <div class="stat rv" data-d="3"><div class="n"><span class="cnt" data-to="0">0</span></div><div class="l">cloud-API's gebruikt</div></div>
   </div>
-  <div class="cta">
-    <a class="btn" href="#showcase">Bekijk de film ▶</a>
-    <a class="btn ghost" href="#live">Live demo's</a>
-    <a class="btn ghost" href="mailto:robaslab@gmail.com">Contact</a>
-  </div>
+  <p class="footnote rv" data-d="4">261 t/s is gemeten decode-snelheid (Strata + DFlash2 speculative decoding, UD-IQ3_XXS op 262K context) — geen marketingplaatje.</p>
+  <div class="scrollhint">scroll</div>
 </section>
 
+<!-- ══ MARQUEE ══ -->
+<div class="marquee"><div class="track">
+  <span><b>ExLlamaV3</b><i>·</i><b>Strata engine</b><i>·</i><b>DFlash2 spec-decoding</b><i>·</i><b>TabbyAPI</b><i>·</i><b>llama.cpp</b><i>·</i><b>WebGPU</b><i>·</i><b>WebGL2 / GLSL</b><i>·</i><b>YuE2 muziekproductie</b><i>·</i><b>Wan2GP video</b><i>·</i><b>CUDA 13</b><i>·</i><b>Open WebUI</b><i>·</i><b>Hermes agents</b><i>·</i></span>
+  <span aria-hidden="true"><b>ExLlamaV3</b><i>·</i><b>Strata engine</b><i>·</i><b>DFlash2 spec-decoding</b><i>·</i><b>TabbyAPI</b><i>·</i><b>llama.cpp</b><i>·</i><b>WebGPU</b><i>·</i><b>WebGL2 / GLSL</b><i>·</i><b>YuE2 muziekproductie</b><i>·</i><b>Wan2GP video</b><i>·</i><b>CUDA 13</b><i>·</i><b>Open WebUI</b><i>·</i><b>Hermes agents</b><i>·</i></span>
+</div></div>
+
+<!-- ══ SHOWCASE ══ -->
 <section id="showcase" class="wrap">
-  <h2>Showcase</h2>
-  <p class="sub">De film: 100 zelfstandige HTML-paginaatjes — van flow fields tot flipperkast — in 1,18 uur door het model gebouwd, live opgenomen en gemount met eigen muziek.</p>
-  <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/NDL1NnzTWKs" title="100 HTML-pagina's lokaal gebouwd" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <div class="grid" style="margin-top:18px">
-    <div class="card"><span class="tag">Repo + galerij</span><h3>Alle 100 pagina's</h3><p>Broncode en een live galerij van elke pagina, allemaal gerenderd door lokaal draaiende AI.</p><a class="btn ghost" href="https://robertdingenouts.github.io/Qwen3.8-Flash-Next-100-HTML-Files/" target="_blank" rel="noopener">Live galerij</a></div>
-    <div class="card"><span class="tag">GitHub</span><h3>Broncode</h3><p>Elke pagina, prompt en run-configuratie staat openbaar op GitHub.</p><a class="btn ghost" href="https://github.com/RobertDingenouts/Qwen3.8-Flash-Next-100-HTML-Files" target="_blank" rel="noopener">Naar de repo</a></div>
+  <div class="sec-head">
+    <h2 class="rv">Showcase</h2>
+    <p class="rv" data-d="1">Alles hier is gebouwd, gemeten en opgenomen op eigen hardware. Klik op een kaart voor de film, demo of code — de cijfers eronder zijn geen schattingen.</p>
+    <div class="chips rv" data-d="2">
+      <button class="chip on" data-filter="all">Alles</button>
+      <button class="chip" data-filter="agent">AI-agents</button>
+      <button class="chip" data-filter="engine">Inference</button>
+      <button class="chip" data-filter="web">Web & apps</button>
+      <button class="chip" data-filter="beeld">Beeld</button>
+      <button class="chip" data-filter="muziek">Muziek</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <article class="card rv" data-tags="agent beeld">
+      <div class="media" data-open="media/film-beehive.mp4" data-label="Beehive — lokaal gebouwde bijenkolonie-agent (film, 1:44)">
+        <img src="media/poster-beehive.jpg" alt="Beehive simulatie poster" loading="lazy">
+        <div class="play"><i>▶</i></div><span class="dur">1:44</span>
+      </div>
+      <div class="body"><span class="tag">AI-agent · 3D-simulatie</span>
+        <h3>Beehive — de bijenkolonie</h3>
+        <p>Dezelfde woordelijke prompt die AI Search aan GPT-5.2 gaf. Onze lokale 125B-bouwde honingraat, waggle-dances en nectar-trails — en debugde zichzelf. 23,8 min, 8,77M tokens (99% cache-hit).</p>
+        <div class="row"><a class="mini solid" href="apps/beehive.html" target="_blank" rel="noopener">Live demo →</a>
+          <button class="mini" data-open="media/beehive-compare.mp4" data-label="Zij (GPT-5.2) vs. de onzen — zelfde prompt, 60 seconden">Vergelijkingsfilm</button></div>
+      </div>
+    </article>
+
+    <article class="card rv" data-d="1" data-tags="agent beeld">
+      <div class="media" data-open="media/film-spheres.mp4" data-label="S2 — twee raytraced metalen bollen boven de straat (film, 0:53)">
+        <img src="media/poster-spheres.jpg" alt="Raytraced spheres poster" loading="lazy">
+        <div class="play"><i>▶</i></div><span class="dur">0:53</span>
+      </div>
+      <div class="body"><span class="tag">AI-agent · WebGL2/GLSL</span>
+        <h3>S2 — bollen met fysica</h3>
+        <p>Twee geslepen metalen bollen boven een Londonstraat: straatreflecties, 15 sliders, 6 presets — WebGL2 from scratch. Eén model, twee harnesses: met zelf-kijkende agent 16,4 min en geslaagd; zonder faalde het.</p>
+        <div class="row"><button class="mini solid" data-open="media/film-spheres.mp4" data-label="S2 — raytraced spheres (film)">Bekijk de film ▶</button></div>
+      </div>
+    </article>
+
+    <article class="card rv" data-d="2" data-tags="agent beeld">
+      <div class="media" data-open="media/film-erasmus.mp4" data-label="S3 — raytraced spheres op de Erasmusbrug (film, 0:47)">
+        <img src="media/poster-erasmus.jpg" alt="Erasmusbrug spheres poster" loading="lazy">
+        <div class="play"><i>▶</i></div><span class="dur">0:47</span>
+      </div>
+      <div class="body"><span class="tag">AI-agent · Rotterdam</span>
+        <h3>S3 — spheres op de Erasmusbrug</h3>
+        <p>"Raytracer, spheres op de Erasmusbrug" — van prompt naar eigen 360°-panorama met GGX-reflecties in één agent-run van een dag later. De stad weerspiegeld in het chroom.</p>
+        <div class="row"><button class="mini solid" data-open="media/film-erasmus.mp4" data-label="S3 — Erasmusbrug (film)">Bekijk de film ▶</button></div>
+      </div>
+    </article>
+
+    <article class="card rv" data-tags="agent web">
+      <div class="media" data-open="https://www.youtube-nocookie.com/embed/NDL1NnzTWKs" data-type="yt" data-label="100 HTML-pagina's, zelf gebouwd door mijn lokale AI (YouTube, 2:44)">
+        <img src="media/poster-100html.png" alt="Galerij van 100 HTML-pagina's" loading="lazy">
+        <div class="play"><i>▶</i></div><span class="dur">2:44</span>
+      </div>
+      <div class="body"><span class="tag">100 builds · 1,18 uur</span>
+        <h3>100 HTML-pagina's, in één run</h3>
+        <p>Van flow fields tot flipperkast: honderd zelfstandige paginaatjes, door het model gebouwd en live opgenomen — met eigen muziek. Elke pagina staat openbaar in de galerij.</p>
+        <div class="row"><a class="mini solid" href="https://robertdingenouts.github.io/Qwen3.8-Flash-Next-100-HTML-Files/" target="_blank" rel="noopener">Live galerij</a>
+          <a class="mini" href="https://github.com/RobertDingenouts/Qwen3.8-Flash-Next-100-HTML-Files" target="_blank" rel="noopener">GitHub</a></div>
+      </div>
+    </article>
+
+    <article class="card rv" data-d="1" data-tags="engine">
+      <div class="body"><span class="tag red">Inference-engine</span>
+        <h3>Strata + DFlash2 — de motor</h3>
+        <p>De installatie eronder is zelf gebouwd en gemeten: een 125B MoE-model op consumentenhardware, speculative decoding, KV-cache Q8 op maximaal context. Snelheid is hier geen claim maar een kolom in de meettabel.</p>
+        <div class="row" style="gap:16px;margin:6px 0 2px">
+          <span class="badge"><b>261</b> t/s decode</span><span class="badge"><b>262K</b> context</span><span class="badge"><b>32 GB</b> VRAM, één kaart</span>
+        </div>
+        <div class="row"><a class="mini solid" href="https://github.com/RobertDingenouts/qwen38-flashnext-strata-rtx5090" target="_blank" rel="noopener">Meetdata & repo →</a></div>
+      </div>
+    </article>
+
+    <article class="card rv" data-d="2" data-tags="muziek">
+      <div class="body"><span class="tag">YuE2 · eigen producties</span>
+        <h3>Robas Muziek</h3>
+        <p>Alle muziek op deze site is zelf geproduceerd — door lokaal draaiende AI, gemixt en gekozen door mij. Twee previews:</p>
+        <div class="trackrow"><button data-p="1" aria-label="Preview afspelen">▶</button><div><div class="tt">Games Groove</div><div class="ts">upbeat · 0:40 preview</div></div><div class="prog"><i></i></div></div>
+        <div class="trackrow"><button data-p="2" aria-label="Preview afspelen">▶</button><div><div class="tt">Epic Finale</div><div class="ts">cinema · 0:40 preview</div></div><div class="prog"><i></i></div></div>
+        <div class="row"><a class="mini solid" href="https://www.youtube.com/@RobasLab" target="_blank" rel="noopener">YouTube-kanaal →</a></div>
+      </div>
+    </article>
+
+    <article class="card rv" data-tags="beeld">
+      <div class="media" data-open="media/showreel.mp4" data-label="Robas Beeld — showreel 2026">
+        <img src="media/poster-showreel.jpg" alt="Showreel poster" loading="lazy">
+        <div class="play"><i>▶</i></div><span class="dur">reel</span>
+      </div>
+      <div class="body"><span class="tag">Beeld · AI-video</span>
+        <h3>Showreel 2026</h3>
+        <p>Intros, promo-reels en animaties — van storyboard tot render draait alles lokaal (Wan2GP, ffmpeg-pijplijnen). In opdracht o.a. voor Judoclub Michigami.</p>
+        <div class="row"><button class="mini solid" data-open="media/showreel.mp4" data-label="Robas Beeld — showreel 2026">Afspelen ▶</button></div>
+      </div>
+    </article>
+
+    <article class="card rv" data-d="1" data-tags="web">
+      <div class="media" data-open="https://judoclubmichigami.nl" data-type="demo" data-label="Judoclub Michigami — ledensysteem & website (live)">
+        <img src="media/poster-judoclub.jpg" alt="Judoclub Michigami platform" loading="lazy">
+        <div class="play"><i>↗</i></div>
+      </div>
+      <div class="body"><span class="tag blue">Web · live productie</span>
+        <h3>Ledensysteem Judoclub Michigami</h3>
+        <p>Compleet platform voor een judoclub: inschrijvingen, contributie, nieuws en toernooien — gebouwd, getest en al jaren in echt gebruik door vrijwilligers.</p>
+        <div class="row"><a class="mini solid" href="https://judoclubmichigami.nl" target="_blank" rel="noopener">Live site</a>
+          <a class="mini" href="https://github.com/RobertDingenouts/judoclub-platform" target="_blank" rel="noopener">GitHub</a></div>
+      </div>
+    </article>
+
+    <article class="card rv" data-d="2" data-tags="web">
+      <div class="media" data-open="https://robertdingenouts.github.io/cursus-japans/" data-type="demo" data-label="Cursus Japans — interactief leerschrift (live)">
+        <img src="media/poster-japans.jpg" alt="Cursus Japans website" loading="lazy">
+        <div class="play"><i>↗</i></div>
+      </div>
+      <div class="body"><span class="tag blue">Web · educatie</span>
+        <h3>Cursus Japans</h3>
+        <p>Interactief leerschrift voor hiragana, katakana en basiszinnen — met oefeningen en uitspraak. Ook de rode stip mag niet ontbreken.</p>
+        <div class="row"><a class="mini solid" href="https://robertdingenouts.github.io/cursus-japans/" target="_blank" rel="noopener">Volg de les →</a></div>
+      </div>
+    </article>
   </div>
 </section>
 
+<!-- ══ LIVE ══ -->
 <section id="live" class="wrap">
-  <h2>Live demo's</h2>
-  <p class="sub">Echte runs uit het <em>AI Search replica</em>-project: identieke prompts uit frontier-video's, nagebouwd door onze lokale 125B. Klik en gebruik ze direct.</p>
-  <div class="grid">
-    <div class="card"><span class="tag">● live · klaar</span><video src="media/beehive-loop.mp4" poster="media/beehive-poster.jpg" autoplay muted loop playsinline style="width:100%;border-radius:10px;background:#000"></video><h3>Beehive-simulatie</h3><p>Agentgebaseerde bijenkolonie: honingraat cel-voor-cel, waggle-dances, nectar-trails en een volledige HUD. Gebouwd + zelf debugd in 23,8 min.</p><a class="btn live" href="apps/beehive.html">Open demo →</a></div>
-    <div class="card"><span class="tag">in bouw</span><h3>Ray-traced spheres</h3><p>Eigen ray-tracer in pure JS — schaduwen,reflecties en materialen. Run volgt.</p><a class="btn ghost" href="#live">Binnenkort</a></div>
-    <div class="card"><span class="tag">in bouw</span><h3>Aardse digital twin</h3><p>3D-aarde met live-achtige data, rendering en camera. Run volgt.</p><a class="btn ghost" href="#live">Binnenkort</a></div>
+  <div class="sec-head">
+    <h2 class="rv">Live — klik en gebruik het</h2>
+    <p class="rv" data-d="1">Geen screenshots van wat het zou kunnen: dit draait nu. De Beehive-demo hieronder is 100% statisch HTML — gebouwd door de lokale agent, gehost zonder server.</p>
   </div>
-  <p class="small" style="margin-top:18px">Elke run wordt gemeten: duur, output-tokens en tokens/seconde — eerlijke cijfers, geen API-magie.</p>
-  <h3 style="margin-top:40px;margin-bottom:8px">Vergelijking: zijn beehive vs. de onze</h3>
-  <p class="sub">Zelfde woordelijke prompt die AI Search in dec 2025 aan GPT-5.2 gaf. Zestig seconden, met de harde verschillen in beeld.</p>
-  <div class="video"><video src="media/beehive-compare.mp4" controls preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>
+  <div class="livegrid">
+    <div class="livebox rv"><iframe src="apps/beehive.html" title="Beehive live demo" loading="lazy" allowfullscreen></iframe></div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="card rv" data-d="1"><div class="body">
+        <span class="tag">Galerij</span><h3>100 HTML-builds, allemaal live</h3>
+        <p>Elke pagina uit de beroemde run is apart te openen: physics, shaders, spellen, kunst.</p>
+        <div class="row"><a class="btn gold" style="margin-top:6px" href="https://robertdingenouts.github.io/Qwen3.8-Flash-Next-100-HTML-Files/" target="_blank" rel="noopener">Open de galerij →</a></div>
+      </div></div>
+      <div class="card rv" data-d="2"><div class="body">
+        <span class="tag red">YouTube</span><h3>@RobasLab</h3>
+        <p>Elke project-film met model, quant en tokens/seconde netjes in de beschrijving. Eerlijke cijfers, geen API-magie.</p>
+        <div class="row"><a class="btn ghost" style="margin-top:6px" href="https://www.youtube.com/@RobasLab" target="_blank" rel="noopener">Naar het kanaal</a></div>
+      </div></div>
+    </div>
+  </div>
 </section>
 
+<!-- ══ DIENSTEN ══ -->
 <section id="diensten" class="wrap">
-  <h2>Diensten</h2>
-  <p class="sub">Van proof-of-concept tot werkend systeem. Altijd lokaal en eigen hardware waar mogelijk — geen maandelijkse API-rekeningen, geen data weggestuurd.</p>
-  <div class="grid">
-    <div class="card"><span class="tag">AI-ops</span><h3>Lokale AI-setup</h3><p>Een krachtig model draaiend op jóuw hardware: chat, code, documenten en automatisering — offline en privék.</p></div>
-    <div class="card"><span class="tag">Web</span><h3>Apps & automatisering</h3><p>Maatwerk web-apps, registratiesystemen en slimme tools die werk uit handen nemen.</p></div>
-    <div class="card"><span class="tag">Advies</span><h3>Benchmark & advies</h3><p>Wat is er nu écht mogelijk met lokale AI? Ik test, meet en laat het live zien op jouw taken.</p></div>
+  <div class="sec-head">
+    <h2 class="rv">Diensten — vier manieren van samenwerken</h2>
+    <p class="rv" data-d="1">Geen offertemalen: kies wat past, mail even, en we bellen. Altijd lokaal en eigen waar mogelijk — geen maandelijkse API-rekeningen, geen data weggestuurd.</p>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(255px,1fr))">
+    <div class="pack rv" data-tags="diens">
+      <span class="num">01 · INFO</span><h3>Kijken &amp; vragen</h3><span class="price">Gratis, vrijblijvend</span>
+      <ul><li>Live demo (online of bij jou op locatie)</li><li>Eerlijk antwoord: kan dit, of niet?</li><li>Denk mee in je eigen situatie</li></ul>
+      <a class="btn ghost" data-ask="info" href="#">Info aanvragen</a>
+    </div>
+    <div class="pack rv" data-d="1">
+      <span class="num">02 · SERVICE</span><h3>AI in huis, geregeld</h3><span class="price">Afspraak vooraf, helder</span>
+      <ul><li>Installatie &amp; tuning van lokale AI (chat, code, docs)</li><li>Snelheid omhoog: quantizen, engines, hardware-advies</li><li>Onderhoud &amp; updates, ook op afstand</li></ul>
+      <a class="btn ghost" data-ask="service" href="#">Service aanvragen</a>
+    </div>
+    <div class="pack hot rv" data-d="2">
+      <span class="ribbon">meest gekozen</span>
+      <span class="num">03 · FREELANCE</span><h3>Jouw project, mijn stack</h3><span class="price">Per project of per dag</span>
+      <ul><li>AI-apps &amp; automatisering die werk uit handen nemen</li><li>Web-apps, registratiesystemen, tools</li><li>Beeld &amp; video: reels, intros, animatie</li></ul>
+      <a class="btn gold" data-ask="freelance" href="#">Project voorleggen</a>
+    </div>
+    <div class="pack rv" data-d="3">
+      <span class="num">04 · SOLLICITEREN</span><h3>Huur mij in</h3><span class="price">Vast / contract</span>
+      <ul><li>Iemand die AI écht aan het werk krijgt</li><li>Zelfstandig, meetend, bouwend</li><li>CV en referenties direct paraat</li></ul>
+      <a class="btn ghost" data-ask="sollic" href="#">Gesprek inplannen</a>
+      <a href="media/cv-robert-dingenouts.pdf" target="_blank" rel="noopener" style="font-size:13px;text-decoration:underline;text-underline-offset:3px">Of bekijk direct mijn CV (PDF) ↓</a>
+    </div>
   </div>
 </section>
 
+<!-- ══ OVER ══ -->
 <section id="over" class="wrap">
-  <h2>Over Robert</h2>
-  <p class="sub">Van timmerman tot lokale-AI-specialist — een theorie-personaat dat zichzelf alles aanleerde en het meteen in de praktijk bouwt.</p>
-  <div class="timeline">
-    <div class="tl"><h4>Havo → accountancy</h4><span>Hoge cijfers, daarna theoretisch werk gekozen.</span></div>
-    <div class="tl"><h4>15–20 jaar timmerman</h4><span>Praktisch vakmanschap, via werken-leren en uitzendbureien — veel zelf aangeleerd.</span></div>
-    <div class="tl"><h4>Bouwen met lokale AI</h4><span>Specialisatie in lokale LLM's en inference-engines (Strata, DFlash2). Vanuit een rig met één RTX 5090 en 125B-modellen.</span></div>
-    <div class="tl"><h4>Producten</h4><span>Ledensysteem voor Judoclub Michigami, 100-HTML-showcase, AI Search replica's — te zien op deze site.</span></div>
+  <div class="sec-head"><h2 class="rv">Over Robert</h2></div>
+  <div class="over">
+    <div class="prose rv">
+      <p><b>Robert Dingenouts</b> — van timmerman tot lokale-AI-specialist. Een loopbaan in zelf alles aanleren en meteen in de praktijk brengen: hout, cijfers, code en nu de nieuwste taalmodellen.</p>
+      <p>Robas Lab is waar dat samenkomt: één rig met een RTX 5090, 125-miljard-modellen en agents die zelfstandig bouwen. Wat hier op de site staat, is niet gekocht bij een API — het is gebouwd, gemeten en gefilmd op eigen hardware.</p>
+      <p>Zoom je liever uit? Achter dit merk staan ook <a href="https://aisurprise.nl" target="_blank" rel="noopener">AISurprise.nl</a> en jaren praktijk met <a href="https://judoclubmichigami.nl" target="_blank" rel="noopener">Judoclub Michigami</a> — de club waar ook die rode stip vandaan komt.</p>
+      <div class="timeline" style="margin-top:26px">
+        <div class="tl"><h4>Havo → accountancy</h4><span>Hoge cijfers, daarna bewust theoretisch werk gekozen.</span></div>
+        <div class="tl"><h4>15–20 jaar timmerman</h4><span>Praktisch vakmanschap; veel zelf aangeleerd, altijd doorleren.</span></div>
+        <div class="tl"><h4>Bouwen met lokale AI</h4><span>Specialisatie in lokale LLM's en inference-engines (Strata, DFlash2) op consumentenhardware.</span></div>
+        <div class="tl"><h4>Producten</h4><span>Ledensysteem Judoclub Michigami, 100-HTML-showcase, AI-Search-replica's, eigen muziek — te zien op deze site.</span></div>
+      </div>
+    </div>
+    <div class="principles">
+      <div class="pr rv"><b>Meten ≠ geloven</b><span>Elk snelheidscijfer komt uit gemeten runs — met context en config erbij. Eén sample is voorlopig, drie is een patroon.</span></div>
+      <div class="pr rv" data-d="1"><b>Lokaal eerst</b><span>Waar het kan, draait het thuis: geen data weg, geen maandelijkse API-rekening, geen verrassingen.</span></div>
+      <div class="pr rv" data-d="2"><b>Maximaal wat kan</b><span>Altijd de langste context en de beste kwaliteit die haalbaar is — 262K en KV Q8 zijn standaard, niet optioneel.</span></div>
+      <div class="pr rv" data-d="3"><b>Uitleg zonder rook</b><span>Techniek leg ik uit alsof je het volgend weekend zelf wilt draaien. Cijfers ernaast.</span></div>
+    </div>
   </div>
 </section>
 
+<!-- ══ CONTACT ══ -->
 <section id="contact" class="wrap">
-  <div class="contact">
-    <p class="small" style="letter-spacing:2px;text-transform:uppercase">Interesse? Laten we bellen of mailen.</p>
-    <a class="mail" href="mailto:robaslab@gmail.com" style="margin-top:10px;display:inline-block">robaslab@gmail.com</a>
-    <p class="sub" style="margin:14px auto 0">Voor demo's, Offertes of een vrijblijvend gesprek over wat lokale AI voor jou kan doen.</p>
-    <a class="btn" href="mailto:robaslab@gmail.com">Stuur een mail</a>
+  <div class="contact rv">
+    <div class="lbl">Interesse? Eén mail volstaat</div>
+    <a class="mail" href="mailto:robaslab@gmail.com">robaslab@gmail.com</a>
+    <p class="lead" style="max-width:560px;margin:0 auto">Demo, offerte, project of gewoon nieuwsgierig — ik reageer persoonlijk.</p>
+    <div class="cta" style="justify-content:center">
+      <a class="btn gold" href="mailto:robaslab@gmail.com">Mail starten</a>
+      <button class="btn ghost" data-copy="robaslab@gmail.com">E-mail kopiëren</button>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/RobertDingenouts" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://x.com/Aireport_nl" target="_blank" rel="noopener">Volg op X ↗</a>
+      <a href="https://www.youtube.com/@RobasLab" target="_blank" rel="noopener">YouTube ↗</a>
+    </div>
   </div>
 </section>
 
 <footer><div class="wrap foot">
-  <span>© 2026 Robas Lab · Robert Dingenouts · <a href="mailto:robaslab@gmail.com">robaslab@gmail.com</a></span>
-  <span class="small">Inspiratie: <a href="https://aisurprise.nl" target="_blank" rel="noopener">aisurprise.nl</a> · <a href="https://judoclubmichigami.nl" target="_blank" rel="noopener">judoclubmichigami.nl</a></span>
+  <span>© <span id="yy"></span> Robas Lab · Robert Dingenouts · <a href="mailto:robaslab@gmail.com">robaslab@gmail.com</a></span>
+  <span>gebouwd &amp; gehost met 1× RTX 5090 — <a href="https://aisurprise.nl" target="_blank" rel="noopener">aisurprise.nl</a> · <a href="https://judoclubmichigami.nl" target="_blank" rel="noopener">judoclubmichigami.nl</a></span>
 </div></footer>
+
+<!-- ══ LIGHTBOX + TOAST ══ -->
+<div id="lb" role="dialog" aria-modal="true"><figure class="frame"><figcaption></figcaption><button class="x" aria-label="Sluiten">✕</button></figure></div>
+<div id="toast"></div>
+<script src="assets/app.js"></script>
 </body>
 </html>
