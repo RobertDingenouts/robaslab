@@ -142,10 +142,12 @@ const Audio_=(function(){
 (function(){
   const lb=$("#lb"),fr=$("#lb .frame"),cap=$("#lb figcaption");
   function open(src,type,label){
+    if(type==="demo"){ // apps/game openen betrouwbaar in eigen tabblad (iframe kan opslag cros-site blokkeren)
+      window.open(src,"_blank","noopener");return;
+    }
     fr.querySelectorAll("video,iframe").forEach(n=>n.remove());
     let el;
     if(type==="yt"){el=document.createElement("iframe");el.src=src+(src.includes("?")?"&":"?")+"autoplay=1";el.allow="autoplay; encrypted-media; picture-in-picture";el.allowFullscreen=1;}
-    else if(type==="demo"){el=document.createElement("iframe");el.src=src;el.allowFullscreen=1;}
     else{el=document.createElement("video");el.src=src;el.controls=1;el.autoplay=1;el.playsInline=1;el.poster=el.src.replace(/\.\w+$/,".jpg").replace("film-","poster-");}
     fr.appendChild(el);cap.textContent=label||"";
     lb.classList.add("show");document.body.style.overflow="hidden";
