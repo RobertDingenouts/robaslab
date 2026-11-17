@@ -141,6 +141,7 @@ const Audio_=(function(){
 /* ── 7. lightbox ──────────────────────────────────────────────── */
 (function(){
   const lb=$("#lb"),fr=$("#lb .frame"),cap=$("#lb figcaption");
+  let lastFocus=null;
   function open(src,type,label){
     if(type==="demo"){ // apps/game openen betrouwbaar in eigen tabblad (iframe kan opslag cros-site blokkeren)
       window.open(src,"_blank","noopener");return;
@@ -151,11 +152,14 @@ const Audio_=(function(){
     else{el=document.createElement("video");el.src=src;el.controls=1;el.autoplay=1;el.playsInline=1;el.poster=el.src.replace(/\.\w+$/,".jpg").replace("film-","poster-");}
     fr.appendChild(el);cap.textContent=label||"";
     lb.classList.add("show");document.body.style.overflow="hidden";
+    lastFocus=document.activeElement;lb.setAttribute("aria-hidden","false");$("#lb .x").focus();
   }
-  function close(){lb.classList.remove("show");document.body.style.overflow="";
-    fr.querySelectorAll("video,iframe").forEach(n=>{n.remove();});}
-  $$("[data-open]").forEach(el=>el.addEventListener("click",()=>
-    open(el.dataset.open,el.dataset.type||"video",el.dataset.label)));
+  function close(){if(!lb.classList.contains("show"))return;lb.classList.remove("show");document.body.style.overflow="";lb.setAttribute("aria-hidden","true");
+    fr.querySelectorAll("video,iframe").forEach(n=>{n.remove();});
+    if(lastFocus){lastFocus.focus();lastFocus=null;}}
+  $$("[data-open]").forEach(el=>{el.tabIndex=0;el.setAttribute("role","button");
+    el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();el.click();}});
+    el.addEventListener("click",()=>open(el.dataset.open,el.dataset.type||"video",el.dataset.label));});
   $("#lb .x").addEventListener("click",close);
   lb.addEventListener("click",e=>{if(e.target===lb)close();});
   addEventListener("keydown",e=>{if(e.key==="Escape")close();});
@@ -163,7 +167,7 @@ const Audio_=(function(){
 
 /* ── 8. showcase-filters ──────────────────────────────────────── */
 $$(".chip").forEach(ch=>ch.addEventListener("click",()=>{
-  $$(".chip").forEach(c=>c.classList.toggle("on",c===ch));
+  $$(".chip").forEach(c=>{c.classList.toggle("on",c===ch);c.setAttribute("aria-pressed",String(c===ch));});
   const f=ch.dataset.filter;
   $$(".card[data-tags]").forEach(c=>{
     const hit=f==="all"||c.dataset.tags.split(" ").includes(f);

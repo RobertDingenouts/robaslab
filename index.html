@@ -7,16 +7,24 @@
 <meta name="description" content="Robas Lab van Robert Dingenouts: 125 miljard parameters lokaal op één RTX 5090, zonder cloud. Showcase, live demo's en een compleet lokaal AI-modelpark — gebouwd, gemeten en gefilmd op eigen hardware.">
 <meta property="og:title" content="Robas Lab — Lokale AI, echt werkend">
 <meta property="og:description" content="125B-model, 1 GPU, geen cloud. Showcase, live demo's en 40+ lokale modellen — meten voordat je beweert.">
-<meta property="og:image" content="https://robaslab.nl/media/poster-beehive.jpg">
+<meta property="og:image" content="https://robaslab.nl/media/og-image.jpg">
+<meta property="og:url" content="https://robaslab.nl/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://robaslab.nl/">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%23e4342e'/%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23d9a441' stroke-width='2'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/app.css">
-<noscript><style>.rv{opacity:1!important;transform:none!important}.cnt{display:none}</style></noscript>
+<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Person","name":"Robert Dingenouts","alternateName":"Robas","url":"https://robaslab.nl/","sameAs":["https://github.com/RobertDingenouts","https://www.youtube.com/@RobasLab","https://www.youtube.com/@RobasMuziek"]},
+ {"@type":"WebSite","name":"Robas Lab","url":"https://robaslab.nl/","inLanguage":"nl"}]}
+</script>
 </head>
 <body>
+<a class="skip" href="#showcase">Naar inhoud</a>
 <div id="bar"></div>
 
 <header><div class="wrap"><nav>
@@ -58,9 +66,9 @@
   </div>
  </div>
   <div class="stats">
-    <div class="stat rv"><div class="n"><span class="cnt" data-to="125">0</span><small> miljard</small></div><div class="l">parameters, lokaal</div></div>
-    <div class="stat rv" data-d="1"><div class="n"><span class="cnt" data-to="261">0</span><small> t/s</small></div><div class="l">decode, gemeten op 262K context</div></div>
-    <div class="stat rv" data-d="2"><div class="n"><span class="cnt" data-to="100">0</span><small> apps</small></div><div class="l">HTML-pagina's in 1,18 uur gebouwd</div></div>
+    <div class="stat rv"><div class="n"><span class="cnt" data-to="125">125</span><small> miljard</small></div><div class="l">parameters, lokaal</div></div>
+    <div class="stat rv" data-d="1"><div class="n"><span class="cnt" data-to="261">261</span><small> t/s</small></div><div class="l">decode, gemeten op 262K context</div></div>
+    <div class="stat rv" data-d="2"><div class="n"><span class="cnt" data-to="100">100</span><small> apps</small></div><div class="l">HTML-pagina's in 1,18 uur gebouwd</div></div>
     <div class="stat rv" data-d="3"><div class="n"><span class="cnt" data-to="0">0</span></div><div class="l">cloud-API's gebruikt</div></div>
   </div>
   <p class="footnote rv" data-d="4">261 t/s is gemeten decode-snelheid (Strata + DFlash2 speculative decoding, UD-IQ3_XXS op 262K context) — geen marketingplaatje.</p>
@@ -79,12 +87,12 @@
     <h2 class="rv">Showcase</h2>
     <p class="rv" data-d="1">Alles hier is gebouwd, gemeten en opgenomen op eigen hardware. Klik op een kaart voor de film, demo of code — de cijfers eronder zijn geen schattingen.</p>
     <div class="chips rv" data-d="2">
-      <button class="chip on" data-filter="all">Alles</button>
-      <button class="chip" data-filter="agent">AI-agents</button>
-      <button class="chip" data-filter="engine">Inference</button>
-      <button class="chip" data-filter="web">Web & apps</button>
-      <button class="chip" data-filter="beeld">Beeld</button>
-      <button class="chip" data-filter="muziek">Muziek</button>
+      <button class="chip on" data-filter="all" aria-pressed="true">Alles</button>
+      <button class="chip" data-filter="agent" aria-pressed="false">AI-agents</button>
+      <button class="chip" data-filter="engine" aria-pressed="false">Inference</button>
+      <button class="chip" data-filter="web" aria-pressed="false">Web & apps</button>
+      <button class="chip" data-filter="beeld" aria-pressed="false">Beeld</button>
+      <button class="chip" data-filter="muziek" aria-pressed="false">Muziek</button>
     </div>
   </div>
 
@@ -353,7 +361,7 @@
 </div></footer>
 
 <!-- ══ LIGHTBOX + TOAST ══ -->
-<div id="lb" role="dialog" aria-modal="true"><figure class="frame"><figcaption></figcaption><button class="x" aria-label="Sluiten">✕</button></figure></div>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Mediakijker" aria-hidden="true"><figure class="frame"><figcaption></figcaption><button class="x" aria-label="Sluiten">✕</button></figure></div>
 <div id="toast"></div>
 <script src="assets/app.js"></script>
 </body>
