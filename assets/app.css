@@ -288,3 +288,21 @@ html{scrollbar-color:var(--acc) var(--bg2);scrollbar-width:thin}
 
 .kicker{flex-wrap:wrap;max-width:100%}
 @media(max-width:560px){.kicker{letter-spacing:.16em;font-size:11px}}
+
+/* — lokaal vs frontier — */
+.vs{display:grid;gap:14px;margin-top:20px}
+.vrow{display:flex;justify-content:space-between;gap:18px;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;background:var(--glass)}
+.vrow h3{margin:2px 0 6px;font-size:18px}
+.vrow p{color:var(--dim);font-size:14.5px}
+.vmeta{font:600 11.5px/1.5 ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;color:var(--dim);letter-spacing:.04em;margin-bottom:6px;opacity:.85}
+.vstat{align-self:flex-start;white-space:nowrap;text-align:center;font:700 12px ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;letter-spacing:.08em;padding:8px 14px;border-radius:99px;text-transform:uppercase}
+.vstat small{display:block;font-weight:600;text-transform:none;letter-spacing:0;font-size:10.5px;opacity:.8;margin-top:2px}
+.vstat.ok{color:#8fd8ab;border:1px solid rgba(96,190,133,.45)}
+.vstat.fail{color:#f0908c;border:1px solid rgba(230,90,86,.45)}
+.vstat.wait{color:var(--dim);border:1px dashed var(--line2)}
+.vlist{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.vlist span{font:600 12px ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;color:var(--dim);border:1px dashed var(--line);border-radius:8px;padding:6px 10px}
+.vlesson{margin-top:18px;border-left:3px solid var(--acc);padding:6px 16px;color:var(--dim);font-style:italic}
+.vrow .mini{cursor:pointer;font-size:13px;font-weight:600;border:1px solid var(--line2);border-radius:9px;padding:8px 13px;color:var(--tx);text-decoration:none}
+.vrow .mini:hover{border-color:var(--acc);color:var(--acc)}
+@media(max-width:760px){.vrow{flex-wrap:wrap}.vstat{order:-1}}

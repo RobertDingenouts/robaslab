@@ -30,7 +30,7 @@
 <header><div class="wrap"><nav>
   <span class="brand">ROB<b>AS</b> LAB<span class="dot"></span></span>
   <span class="links">
-    <a href="#showcase">Showcase</a><a href="#live">Live</a><a href="#modelpark">Modelpark</a><a href="#over">Over</a><a href="#contact">Contact</a>
+    <a href="#showcase">Showcase</a><a href="#live">Live</a><a href="#vergelijk">Vergelijk</a><a href="#modelpark">Modelpark</a><a href="#over">Over</a><a href="#contact">Contact</a>
   </span>
   <button id="bgmBtn" aria-label="Achtergrondmuziek aan/uit" aria-pressed="false"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span><span class="t">Geluid</span></button>
 </nav></div></header>
@@ -272,6 +272,38 @@
 </section>
 
 <!-- ══ MODELARK ══ -->
+<section id="vergelijk" class="wrap">
+  <span class="kicker rv">Lokaal vs frontier</span>
+  <h2 class="rv">Dezelfde opdracht, eigen computer</h2>
+  <p class="sub rv">YouTube-kanaal AI Search test frontiermodellen met vaste opdrachten. Die prompts worden hier woordelijk nagebouwd op de eigen 5090 — zestien maanden later, met de modellen van nu. Eén prompt, één sessie: de auto-retry-laagjes uit zijn video's zitten hier niet in. Per opdracht de tijden en een eerlijk oordeel.</p>
+  <div class="vs rv">
+    <div class="vrow"><div>
+      <div class="vmeta">AI Search: GPT-5.2 · dec 2025 · 0:47 — Prompt: “Make a visual simulation of a beehive construction…”</div>
+      <h3>Beehive-simulatie</h3>
+      <p>Bij hem: één prompt, fraaie animatie. Hier: <b>23,8 min</b>, één prompt, zonder tussenkomst — 90 bijen met paden, waggle-dance, sliders voor koloniegrootte en grondstoffen, ±1100 cellen op het einde.</p>
+      <div class="row"><span class="mini" data-open="media/film-beehive.mp4" data-type="film" data-label="Beehive — 23,8 min, 1 prompt, lokaal">Bekijk de film →</span></div>
+    </div><span class="vstat ok">Gelukt</span></div>
+    <div class="vrow"><div>
+      <div class="vmeta">AI Search: “no AI model could get this right so far” · dec 2025 · 7:00 — raytracing, twee metalen bollen boven een straat</div>
+      <h3>Raytraced bollen</h3>
+      <p>Twee pogingen, dezelfde prompt en hetzelfde model. In de eigen harness: <b>37,1 min</b>, mislukt — de bollen bleven boven het panorama zweven. In een agent-loop met screencontrole: <b>16,4 min</b>, geslaagd — stratreflecties in beide bollen, 15 sliders, 0 fouten. Kanttekening: HDR-panorama in plaats van 3D-straatmesh.</p>
+      <div class="row"><span class="mini" data-open="media/film-spheres.mp4" data-type="film" data-label="Metalen bollen boven de straat — raytracing, lokaal">Bekijk de film →</span></div>
+    </div><span class="vstat ok">Gelukt<br><small>na 1 mislukte poging</small></span></div>
+    <div class="vrow"><div>
+      <div class="vmeta">Eigen variant op de bollen-opdracht · nov 2026 — zelfde prompt, Rotterdam als straat</div>
+      <h3>Bollen op de Erasmusbrug</h3>
+      <p>Fysisch klopte alles (bollen op straat, contactschaduwen, HDR-reflexen), maar het panorama uit twee foto’s overtuigde niet: spiegeling verkeerd en het beeld verloopt halverwege. Uiteinde: van de site afgehaald. Hoort er ook bij.</p>
+    </div><span class="vstat fail">Mislukt</span></div>
+    <div class="vrow"><div>
+      <div class="vmeta">AI Search: GPT-5.4 · mrt 2026 en Fable 5.2 · nov 2026</div>
+      <h3>Wat nog te wachten staat</h3>
+      <p>Zeven opdrachten staan klaar, prompts woordelijk uitgeschreven: digital twin of Earth, piano-roll, mecha-platformer, explainer-video van 90 s, Chopin op een virtuele piano, CML-deepresearch en drie ideeën voor fabrieksvee.</p>
+      <div class="vlist"><span>Aarde-twin 3D</span><span>Piano-roll</span><span>Mecha-platformer</span><span>Explainer-video</span><span>Chopin-piano</span><span>CML-onderzoek</span><span>Fabrieksvee-ideeën</span></div>
+    </div><span class="vstat wait">Wachtrij</span></div>
+  </div>
+  <p class="vlesson rv">De grootste finding tot nu toe: bij de bollen-opdracht kon het model het al — de eerste mislukking zat in de harness eromheen, niet in het model. Het verschil tussen een werkende agent en een falende zit in de lus van bouwen → screenshot → correctie, niet in het aantal parameters.</p>
+  <p class="mnote rv">Methoden, ruwe runs en meetingtabellen: <a href="https://github.com/RobertDingenouts/qwen38-flashnext-strata-rtx5090" target="_blank" rel="noopener">meetrepo op GitHub</a>.</p>
+</section>
 <section id="modelpark" class="wrap">
   <div class="sec-head">
     <h2 class="rv">Het modelpark — <em> alles</em> draait lokaal</h2>
