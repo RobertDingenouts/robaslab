@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Robas Lab — Lokale AI, echt werkend</title>
-<meta name="description" content="Robas Lab van Robert Dingenouts: 125 miljard parameters lokaal op één RTX 5090, zonder cloud. Showcase, live demo's en een compleet lokaal AI-modelpark — gebouwd, gemeten en gefilmd op eigen hardware.">
-<meta property="og:title" content="Robas Lab — Lokale AI, echt werkend">
-<meta property="og:description" content="125B-model, 1 GPU, geen cloud. Showcase, live demo's en 40+ lokale modellen — meten voordat je beweert.">
+<title>Robas Lab — demo’s, sites en films, lokaal gebouwd</title>
+<meta name="description" content="Demo's, webapps, games, films en muziek van Robert Dingenouts — gebouwd en gedraaid op een eigen computer met lokale AI-modellen, met de metingen erbij.">
+<meta property="og:title" content="Robas Lab — demo’s, sites en films, lokaal gebouwd">
+<meta property="og:description" content="Demo's, sites en films — gebouwd en gemeten op één computer, zonder cloud.">
 <meta property="og:image" content="https://robaslab.nl/media/og-image.jpg">
 <meta property="og:url" content="https://robaslab.nl/">
 <meta name="twitter:card" content="summary_large_image">
@@ -45,16 +45,15 @@
 <section class="hero wrap">
  <div class="hero-grid">
   <div class="hero-main">
-  <span class="kicker rv">Robas Lab · Lokale-AI studio <span class="dot"></span></span>
-  <h1 class="rv" data-d="1">De slimste AI draait gewoon <em>hier.</em></h1>
-  <p class="lead rv" data-d="2">125 miljard parameters op één RTX 5090 — en daarachter een heel park aan taal-, beeld-, video-, stem- en muziekmodellen. Geen cloud, geen API-rekeningen, geen data weg. Ik bouw, meet en show wat lokale AI vandaag écht kan.</p>
+  <span class="kicker rv">Robas Lab · eigen projecten op één computer <span class="dot"></span></span>
+  <h1 class="rv" data-d="1">Demo’s, sites en films — <em>allemaal lokaal gedraaid.</em></h1>
+  <p class="lead rv" data-d="2">Kleine webapps, games, films en muziek die ik in mijn vrije tijd maak met modellen op mijn eigen computer. Bij elke demo leg ik uit hoe het is gezet — alsof je het volgend weekend zelf wilt draaien. De metingen staan erbij.</p>
   <div class="cta rv" data-d="3">
-    <button class="btn gold" id="soundCTA">Beleef het met geluid ▶</button>
+    <button class="btn gold" id="soundCTA">Bekijk met geluid ▶</button>
     <a class="btn ghost" href="#showcase">Showcase bekijken</a>
   </div>
   <div class="badges rv" data-d="4">
     <span class="badge">Model <b>Qwen3.8-Flash-Next 125B</b></span>
-    <span class="badge">Modelpark <b>40+ lokaal</b></span>
     <span class="badge">Engine <b>Strata + DFlash2</b></span>
     <span class="badge">HW <b>1× RTX 5090 32GB</b></span>
     <span class="badge">Context <b>262K · KV Q8</b></span>
@@ -65,13 +64,7 @@
     <pre id="tlog"></pre>
   </div>
  </div>
-  <div class="stats">
-    <div class="stat rv"><div class="n"><span class="cnt" data-to="125">125</span><small> miljard</small></div><div class="l">parameters, lokaal</div></div>
-    <div class="stat rv" data-d="1"><div class="n"><span class="cnt" data-to="261">261</span><small> t/s</small></div><div class="l">decode, gemeten op 262K context</div></div>
-    <div class="stat rv" data-d="2"><div class="n"><span class="cnt" data-to="100">100</span><small> apps</small></div><div class="l">HTML-pagina's in 1,18 uur gebouwd</div></div>
-    <div class="stat rv" data-d="3"><div class="n"><span class="cnt" data-to="0">0</span></div><div class="l">cloud-API's gebruikt</div></div>
-  </div>
-  <p class="footnote rv" data-d="4">261 t/s is gemeten decode-snelheid (Strata + DFlash2 speculative decoding, UD-IQ3_XXS op 262K context) — geen marketingplaatje.</p>
+  <p class="footnote rv" data-d="4">Alles wat hier draait, staat in het modelpark hieronder — met configuratie, meetdata en repo. De getallen in de terminal zijn gemeten, niet geschat.</p>
   <div class="scrollhint">scroll</div>
 </section>
 
@@ -85,7 +78,7 @@
 <section id="showcase" class="wrap">
   <div class="sec-head">
     <h2 class="rv">Showcase</h2>
-    <p class="rv" data-d="1">Alles hier is gebouwd, gemeten en opgenomen op eigen hardware. Klik op een kaart voor de film, demo of code — de cijfers eronder zijn geen schattingen.</p>
+    <p class="rv" data-d="1">Klik op een kaart voor de film, demo of code. Wat je ziet is gebouwd en opgenomen op mijn computer; de cijfers eronder zijn gemeten.</p>
     <div class="chips rv" data-d="2">
       <button class="chip on" data-filter="all" aria-pressed="true">Alles</button>
       <button class="chip" data-filter="agent" aria-pressed="false">AI-agents</button>
@@ -104,7 +97,7 @@
       </div>
       <div class="body"><span class="tag">AI-agent · 3D-simulatie</span>
         <h3>Beehive — de bijenkolonie</h3>
-        <p>Dezelfde woordelijke prompt die AI Search aan GPT-5.2 gaf. Onze lokale 125B-bouwde honingraat, waggle-dances en nectar-trails — en debugde zichzelf. 23,8 min, 8,77M tokens (99% cache-hit).</p>
+        <p>Dezelfde prompt die ooit naar GPT-5.2 ging, hier lokaal gebouwd: honingraat, waggle-dances en nectar-trails — het model debugde zichzelf. Gemeten: 23,8 min, 8,77M tokens (99% cache).</p>
         <div class="row"><a class="mini solid" href="apps/beehive.html" target="_blank" rel="noopener">Live demo →</a>
           <button class="mini" data-open="media/beehive-compare.mp4" data-label="Zij (GPT-5.2) vs. de onzen — zelfde prompt, 60 seconden">Vergelijkingsfilm</button></div>
       </div>
@@ -162,7 +155,7 @@
     <article class="card rv" data-d="1" data-tags="engine">
       <div class="body"><span class="tag red">Inference-engine</span>
         <h3>Strata + DFlash2 — de motor</h3>
-        <p>De installatie eronder is zelf gebouwd en gemeten: een 125B MoE-model op consumentenhardware, speculative decoding, KV-cache Q8 op maximaal context. Snelheid is hier geen claim maar een kolom in de meettabel.</p>
+        <p>Hoe ik een 125B-model op gewone PC-hardware aan het draaien kreeg: speculative decoding, KV-cache Q8 op de volle context. De meettabel en repo staan eronder — alles is gemeten, niets geschat.</p>
         <div class="row" style="gap:16px;margin:6px 0 2px">
           <span class="badge"><b>261</b> t/s decode</span><span class="badge"><b>262K</b> context</span><span class="badge"><b>32 GB</b> VRAM, één kaart</span>
         </div>
@@ -222,9 +215,9 @@
         <img src="media/poster-aisurprise.jpg" alt="AISurprise.nl" loading="lazy">
         <div class="play"><i>↗</i></div>
       </div>
-      <div class="body"><span class="tag blue">Web · vlaggenschip</span>
+      <div class="body"><span class="tag blue">Web · eerdere site</span>
         <h3>AISurprise.nl</h3>
-        <p>De studio-site waar alles begon: games, playground en demo's — elke showcase is hier gebouwd, getest en live gezet. Het moederproject achter veel van dit werk.</p>
+        <p>Mijn eerdere site met games, playground en demo's — veel van het werk hier is daar begonnen en getest.</p>
         <div class="row"><a class="mini solid" href="https://aisurprise.nl" target="_blank" rel="noopener">Bekijk de site →</a></div>
       </div>
     </article>
@@ -259,19 +252,19 @@
 <section id="live" class="wrap">
   <div class="sec-head">
     <h2 class="rv">Live — klik en gebruik het</h2>
-    <p class="rv" data-d="1">Geen screenshots van wat het zou kunnen: dit draait nu. De Beehive-demo hieronder is 100% statisch HTML — gebouwd door de lokale agent, gehost zonder server.</p>
+    <p class="rv" data-d="1">Dit draait nu, geen screenshots. De Beehive-demo hieronder is statisch HTML — gebouwd door het lokale model, gehost zonder server.</p>
   </div>
   <div class="livegrid">
     <div class="livebox rv"><iframe src="apps/beehive.html" title="Beehive live demo" loading="lazy" allowfullscreen></iframe></div>
     <div style="display:flex;flex-direction:column;gap:20px">
       <div class="card rv" data-d="1"><div class="body">
         <span class="tag">Galerij</span><h3>100 HTML-builds, allemaal live</h3>
-        <p>Elke pagina uit de beroemde run is apart te openen: physics, shaders, spellen, kunst.</p>
+        <p>Elke pagina uit de run is apart te openen: physics, shaders, spellen, kunst.</p>
         <div class="row"><a class="btn gold" style="margin-top:6px" href="https://robertdingenouts.github.io/Qwen3.8-Flash-Next-100-HTML-Files/" target="_blank" rel="noopener">Open de galerij →</a></div>
       </div></div>
       <div class="card rv" data-d="2"><div class="body">
         <span class="tag red">YouTube</span><h3>@RobasLab</h3>
-        <p>Elke project-film met model, quant en tokens/seconde netjes in de beschrijving. Eerlijke cijfers, geen API-magie.</p>
+        <p>Elke project-film met model, quant en tokens/seconde in de beschrijving.</p>
         <div class="row"><a class="btn ghost" style="margin-top:6px" href="https://www.youtube.com/@RobasLab" target="_blank" rel="noopener">Naar het kanaal</a></div>
       </div></div>
     </div>
@@ -282,7 +275,7 @@
 <section id="modelpark" class="wrap">
   <div class="sec-head">
     <h2 class="rv">Het modelpark — <em> alles</em> draait lokaal</h2>
-    <p class="rv" data-d="1">Niet één model uitgelicht, maar alles wat hier echt draait of gedraaid is: 40+ modellen over zeven disciplines, op één RTX 5090. Eigen LoRA-trainingen, geen abonnementen.</p>
+    <p class="rv" data-d="1">De modellen die hier draaien of hebben gedraaid: 40+ stuks over zeven disciplines, op één RTX 5090. Altijd met de configuratie erbij, geen abonnementen.</p>
     <div class="row rv" data-d="2" style="gap:12px;margin-top:12px;flex-wrap:wrap">
       <span class="badge"><b>40+</b> modellen</span><span class="badge"><b>7</b> disciplines</span><span class="badge"><b>1</b> GPU</span><span class="badge"><b>0</b> cloud-API's</span>
     </div>
@@ -292,7 +285,7 @@
       <ul><li>Qwen3.8-Flash-Next 125B — eigen variant, 261 t/s gemeten</li><li>Qwen3.8-27B Uncensored</li><li>Qwen3-30B-A3B · NVFP4</li><li>GLM-4.5V — multimodaal, kijkt</li></ul>
       <p class="mnote">Serveert via ExLlamaV3 · llama.cpp · Strata + DFlash2, gemeten 261 t/s</p></article>
     <article class="mcard rv" data-d="2"><h3>Beeld</h3>
-      <ul><li>Qwen-Image 2.1 — ook NVFP4</li><li>MOSS-Image SFT + 8-staps turbo-LoRA</li><li>Eigen LoRA-trainingen — huisstijl, tekstposters</li><li>Bonsai Image 4B — licht, supersnel</li></ul>
+      <ul><li>Qwen-Image 2.1 — ook NVFP4</li><li>MOSS-Image SFT + 8-staps turbo-LoRA</li><li>Eigen LoRA-trainingen — huisstijl, tekstposters</li><li>Bonsai Image 4B — licht en snel</li></ul>
       <p class="mnote">Getraind en gegenereerd in ComfyUI / Wan2GP</p></article>
     <article class="mcard rv" data-d="3"><h3>Video</h3>
       <ul><li>MiniMax H3 — tekst/beeld/ref → video, 4–8 stappen</li><li>Wan 2.2 — via Wan2GP</li><li>Kling 2.0</li></ul>
@@ -301,7 +294,7 @@
       <ul><li>VibeVoice-7B — lange dialoog, natuurlijk</li><li>Audio8-TTS Realistic-Air</li><li>dots.tts — klonen van mijn eigen stem</li></ul>
       <p class="mnote">Voor voiceovers, video's en agent-gesprekken</p></article>
     <article class="mcard rv" data-d="5"><h3>Spraak → tekst · STT</h3>
-      <ul><li>faster-whisper large-v3</li><li>wav2vec2 XLSR — speciaal Nederlands</li><li>Parakeet — razendsnelle transcriptie</li><li>MossFormer2 — ruis weg vóór het transcribeert</li></ul>
+      <ul><li>faster-whisper large-v3</li><li>wav2vec2 XLSR — speciaal Nederlands</li><li>Parakeet — snelle transcriptie</li><li>MossFormer2 — ruis weg vóór het transcribeert</li></ul>
       <p class="mnote">Voor clubnotulen, interviews en ondertiteling</p></article>
     <article class="mcard rv" data-d="6"><h3>Muziek</h3>
       <ul><li>YuE2-3B — complete nummers</li><li>ACE-Step — nummers met zang</li><li>MERT + SheetSage2 — analyse en partituren</li></ul>
@@ -318,13 +311,13 @@
   <div class="sec-head"><h2 class="rv">Over Robert</h2></div>
   <div class="over">
     <div class="prose rv">
-      <p><b>Robert Dingenouts</b> — van timmerman tot lokale-AI-specialist. Een loopbaan in zelf alles aanleren en meteen in de praktijk brengen: hout, cijfers, code en nu de nieuwste taalmodellen.</p>
-      <p>Robas Lab is waar dat samenkomt: één rig met een RTX 5090, 125-miljard-modellen en agents die zelfstandig bouwen. Wat hier op de site staat, is niet gekocht bij een API — het is gebouwd, gemeten en gefilmd op eigen hardware.</p>
+      <p><b>Robert Dingenouts</b> — timmerman. Alles wat ik over AI en code weet, heb ik mezelf aangeleerd door het te bouwen; dat gold ook voor hout en cijfers.</p>
+      <p>Robas Lab is de hoek waar ik dat vastleg: één computer met een RTX 5090 en modellen die ik zelf heb gezet. Niks via een cloud-abonnement — gebouwd, gemeten en gefilmd thuis.</p>
       <p>Zoom je liever uit? Achter dit merk staan ook <a href="https://aisurprise.nl" target="_blank" rel="noopener">AISurprise.nl</a> en jaren praktijk met <a href="https://judoclubmichigami.nl" target="_blank" rel="noopener">Judoclub Michigami</a> — de club waar ook die rode stip vandaan komt.</p>
       <div class="timeline" style="margin-top:26px">
-        <div class="tl"><h4>Havo → accountancy</h4><span>Hoge cijfers, daarna bewust theoretisch werk gekozen.</span></div>
+        <div class="tl"><h4>Havo → accountancy</h4><span>Daarna bewust voor theoretisch werk gekozen.</span></div>
         <div class="tl"><h4>15–20 jaar timmerman</h4><span>Praktisch vakmanschap; veel zelf aangeleerd, altijd doorleren.</span></div>
-        <div class="tl"><h4>Bouwen met lokale AI</h4><span>Specialisatie in lokale LLM's en inference-engines (Strata, DFlash2) op consumentenhardware.</span></div>
+        <div class="tl"><h4>Bouwen met lokale AI</h4><span>In mijn vrije tijd: lokale LLM's en inference-engines (Strata, DFlash2) op gewone PC-hardware.</span></div>
         <div class="tl"><h4>Producten</h4><span>Ledensysteem Judoclub Michigami, 100-HTML-showcase, AI-Search-replica's, eigen muziek — te zien op deze site.</span></div>
       </div>
     </div>
