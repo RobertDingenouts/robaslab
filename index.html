@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Robas Lab — demo’s, sites en films, lokaal gebouwd</title>
-<meta name="description" content="Demo's, webapps, games, films en muziek van Robert Dingenouts — gebouwd en gedraaid op een eigen computer met lokale AI-modellen, met de metingen erbij.">
-<meta property="og:title" content="Robas Lab — demo’s, sites en films, lokaal gebouwd">
-<meta property="og:description" content="Demo's, sites en films — gebouwd en gemeten op één computer, zonder cloud.">
+<title>Robas Lab: demo’s, sites en films, lokaal gebouwd</title>
+<meta name="description" content="Webapps, games, films en muziek van Robert Dingenouts, gemaakt en gedraaid op een eigen computer. Metingen erbij.">
+<meta property="og:title" content="Robas Lab: demo’s, sites en films, lokaal gebouwd">
+<meta property="og:description" content="Demo's, sites en films van Robert Dingenouts, gebouwd en gedraaid op een eigen computer. Metingen erbij.">
 <meta property="og:image" content="https://robaslab.nl/media/og-image.jpg">
 <meta property="og:url" content="https://robaslab.nl/">
 <meta name="twitter:card" content="summary_large_image">
@@ -30,7 +30,7 @@
 <header><div class="wrap"><nav>
   <span class="brand">ROB<b>AS</b> LAB<span class="dot"></span></span>
   <span class="links">
-    <a href="#showcase">Showcase</a><a href="#live">Live</a><a href="#vergelijk">Vergelijk</a><a href="#modelpark">Modelpark</a><a href="#over">Over</a><a href="#contact">Contact</a>
+    <a href="#showcase">Showcase</a><a href="#live">Live</a><a href="#release">Nieuw</a><a href="#vergelijk">Vergelijk</a><a href="#modelpark">Modelpark</a><a href="#over">Over</a><a href="#contact">Contact</a>
   </span>
   <button id="bgmBtn" aria-label="Achtergrondmuziek aan/uit" aria-pressed="false"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span><span class="t">Geluid</span></button>
 </nav></div></header>
@@ -46,8 +46,8 @@
  <div class="hero-grid">
   <div class="hero-main">
   <span class="kicker rv">Robas Lab · eigen projecten <span class="dot"></span></span>
-  <h1 class="rv" data-d="1">Demo’s, sites en films — <em>allemaal lokaal gedraaid.</em></h1>
-  <p class="lead rv" data-d="2">Kleine webapps, games, films en muziek die ik in mijn vrije tijd maak met modellen op mijn eigen computer. Bij elke demo leg ik uit hoe het is gezet — alsof je het volgend weekend zelf wilt draaien. De metingen staan erbij.</p>
+  <h1 class="rv" data-d="1">Demo’s, sites en films. <em>Alles draait lokaal.</em></h1>
+  <p class="lead rv" data-d="2">Kleine webapps, games, films en muziek, die ik in mijn vrije tijd op mijn eigen computer maak. Bij elke demo leg ik uit hoe ik het heb opgezet, alsof je het zelf zou bouwen. Metingen erbij.</p>
   <div class="cta rv" data-d="3">
     <button class="btn gold" id="soundCTA">Bekijk met geluid ▶</button>
     <a class="btn ghost" href="#showcase">Showcase bekijken</a>
@@ -60,11 +60,11 @@
   </div>
   </div>
   <div class="term rv" data-d="4" aria-hidden="true">
-    <div class="tbar"><i style="background:#f66"></i><i style="background:#fb5"></i><i style="background:#7bd88f"></i><span>robas@kiebel:~/lab — strata</span></div>
+    <div class="tbar"><i style="background:#f66"></i><i style="background:#fb5"></i><i style="background:#7bd88f"></i><span>robas@kiebel:~/lab</span></div>
     <pre id="tlog"></pre>
   </div>
  </div>
-  <p class="footnote rv" data-d="4">Alles wat hier draait, staat in het modelpark hieronder — met configuratie, meetdata en repo. De getallen in de terminal zijn gemeten, niet geschat.</p>
+  <p class="footnote rv" data-d="4">Alles wat hier draait, vind je verderop in het modelpark, met configuratie, meetdata en repo. De cijfers in de terminal zijn gemeten, niet geschat.</p>
   <div class="scrollhint">scroll</div>
 </section>
 
@@ -78,7 +78,7 @@
 <section id="showcase" class="wrap">
   <div class="sec-head">
     <h2 class="rv">Showcase</h2>
-    <p class="rv" data-d="1">Klik op een kaart voor de film, demo of code. Wat je ziet is gebouwd en opgenomen op mijn computer; de cijfers eronder zijn gemeten.</p>
+    <p class="rv" data-d="1">Klik op een kaart voor de film, demo of code. Alles is op mijn computer gebouwd, en de cijfers eronder zijn gemeten, niet geschat.</p>
     <div class="chips rv" data-d="2">
       <button class="chip on" data-filter="all" aria-pressed="true">Alles</button>
       <button class="chip" data-filter="agent" aria-pressed="false">AI-agents</button>
@@ -91,26 +91,26 @@
 
   <div class="grid">
     <article class="card rv" data-tags="agent beeld">
-      <div class="media" data-open="media/film-beehive.mp4" data-label="Beehive — lokaal gebouwde bijenkolonie-agent (film, 1:44)">
+      <div class="media" data-open="media/film-beehive.mp4" data-label="Beehive: lokaal gebouwde bijenkolonie-agent (film, 1:44)">
         <img src="media/poster-beehive.jpg" alt="Beehive simulatie poster" loading="lazy">
         <div class="play"><i>▶</i></div><span class="dur">1:44</span>
       </div>
       <div class="body"><span class="tag">AI-agent · 3D-simulatie</span>
-        <h3>Beehive — de bijenkolonie</h3>
-        <p>Dezelfde prompt die ooit naar GPT-5.2 ging, hier lokaal gebouwd: honingraat, waggle-dances en nectar-trails — het model debugde zichzelf. Gemeten: 23,8 min, 8,77M tokens (99% cache).</p>
+        <h3>Beehive, de bijenkolonie</h3>
+        <p>Die bekende GPT-5.2-opdracht, hier lokaal opgezet: honingraat, waggle-dances, nectar-trails. Het model loste zijn eigen problemen op. Gemeten: 23,8 min, 8,77M tokens (99% cache).</p>
         <div class="row"><a class="mini solid" href="apps/beehive.html" target="_blank" rel="noopener">Live demo →</a>
-          <button class="mini" data-open="media/beehive-compare.mp4" data-label="Zij (GPT-5.2) vs. de onzen — zelfde prompt, 60 seconden">Vergelijkingsfilm</button></div>
+          <button class="mini" data-open="media/beehive-compare.mp4" data-label="Zij (GPT-5.2) vs de onzen: zelfde prompt, 60 seconden">Vergelijkingsfilm</button></div>
       </div>
     </article>
 
     <article class="card rv" data-d="1" data-tags="agent beeld">
-      <div class="media" data-open="media/film-spheres.mp4" data-label="Metalen bollen boven de straat — bolvormige reflecties (film, 0:53)">
+      <div class="media" data-open="media/film-spheres.mp4" data-label="Metalen bollen boven de straat: bolvormige reflecties (film, 0:53)">
         <img src="media/poster-spheres.jpg" alt="Metalen bollen met straatreflecties" loading="lazy">
         <div class="play"><i>▶</i></div><span class="dur">0:53</span>
       </div>
       <div class="body"><span class="tag">AI-agent · WebGL2/GLSL</span>
         <h3>Metalen bollen boven de straat</h3>
-        <p>Twee geslepen metalen bollen boven een Londense straat: bolvormige straatreflecties, 15 sliders, 6 presets — WebGL2 from scratch. Eén model, twee opzetten: met een agent die z'n eigen beeld checkt in 16,4 min geslaagd; zonder faalde het.</p>
+        <p>Twee geslepen metalen bollen boven een Londense straat, met bolvormige reflecties, 15 sliders en 6 presets. WebGL2 vanaf het begin. Eén model, twee pogingen: zonder agent faalde het, met eigen controle geslaagd in 16,4 min.</p>
         <div class="row"><button class="mini solid" data-open="media/film-spheres.mp4" data-label="Metalen bollen boven de straat (film)">Bekijk de film ▶</button></div>
       </div>
     </article>
@@ -122,40 +122,40 @@
       </div>
       <div class="body"><span class="tag">100 builds · 1,18 uur</span>
         <h3>100 HTML-pagina's, in één run</h3>
-        <p>Van flow fields tot flipperkast: honderd zelfstandige paginaatjes, door het model gebouwd en live opgenomen — met eigen muziek. Elke pagina staat openbaar in de galerij.</p>
+        <p>Van flow fields tot flipperkast: honderd zelfstandige paginaatjes, door het model gebouwd en live opgenomen, met eigen muziek. Openbaar te bekijken.</p>
         <div class="row"><a class="mini solid" href="https://robertdingenouts.github.io/Qwen3.8-Flash-Next-100-HTML-Files/" target="_blank" rel="noopener">Live galerij</a>
           <a class="mini" href="https://github.com/RobertDingenouts/Qwen3.8-Flash-Next-100-HTML-Files" target="_blank" rel="noopener">GitHub</a></div>
       </div>
     </article>
 
     <article class="card rv" data-tags="web">
-      <div class="media" data-open="https://aisurprise.nl/apps/teunies-flappy-boot/index.html" data-type="demo" data-label="Teunies Flappy Boot — speelbaar in je browser">
+      <div class="media" data-open="https://aisurprise.nl/apps/teunies-flappy-boot/index.html" data-type="demo" data-label="Teunies Flappy Boot: speelbaar in je browser">
         <img src="media/poster-teunies.jpg" alt="Teunies Flappy Boot" loading="lazy">
         <div class="play"><i>↗</i></div>
       </div>
       <div class="body"><span class="tag blue">Game · web</span>
         <h3>Teunies Flappy Boot</h3>
-        <p>Flappy Bird, maar de vogel is Teuns boot en de buizen zijn strandpalen met seinlicht — mét procedurele buitenboordmotor die echt bromt. Gebouwd voor een negende verjaardag, live in de browser.</p>
+        <p>Flappy Bird, maar de vogel is Teuns boot en de buizen zijn strandpalen met seinlicht, met hoorbare procedurele buitenboordmotor. Gebouwd voor een negende verjaardag, live in de browser.</p>
         <div class="row"><a class="mini solid" href="https://aisurprise.nl/apps/teunies-flappy-boot/index.html" target="_blank" rel="noopener">Speel 'm →</a></div>
       </div>
     </article>
 
     <article class="card rv" data-d="1" data-tags="web">
-      <div class="media" data-open="https://aisurprise.nl/playground/zonnestelsel" data-type="demo" data-label="Interactief zonnestelsel — draaiend 3D-model in je browser">
+      <div class="media" data-open="https://aisurprise.nl/playground/zonnestelsel" data-type="demo" data-label="Interactief zonnestelsel: draaiend 3D-model in je browser">
         <img src="media/poster-zonnestelsel.jpg" alt="Interactief zonnestelsel" loading="lazy">
         <div class="play"><i>↗</i></div>
       </div>
       <div class="body"><span class="tag blue">Web · educatie</span>
         <h3>Interactief zonnestelsel</h3>
-        <p>Planeten in echte verhoudingen en snelheden, draaiend en sleepbaar in je browser. Uitleg die je vastpakt in plaats van een rijtje feitjes.</p>
+        <p>Planeten in echte verhoudingen en snelheden, draaiend en sleepbaar in je browser. Alles zichtbaar, niets alleen op papier.</p>
         <div class="row"><a class="mini solid" href="https://aisurprise.nl/playground/zonnestelsel" target="_blank" rel="noopener">Verken →</a></div>
       </div>
     </article>
 
     <article class="card rv" data-d="1" data-tags="engine">
       <div class="body"><span class="tag red">Inference-engine</span>
-        <h3>Strata + DFlash2 — de motor</h3>
-        <p>Hoe ik een 125B-model op gewone PC-hardware aan het draaien kreeg: speculative decoding, KV-cache Q8 op de volle context. De meettabel en repo staan eronder — alles is gemeten, niets geschat. Ook een standaard-protocol bench (thinking aan, 11/12 sanity-checks) staat in de repo.</p>
+        <h3>Strata + DFlash2, de motor</h3>
+        <p>Hoe ik een 125B-model op gewone PC-hardware aan het draaien kreeg: speculative decoding en Q8 KV-cache op de volledige context. Alles gemeten, niets geschat. Meettabel en repo staan eronder.</p>
         <div class="row" style="gap:16px;margin:6px 0 2px">
           <span class="badge"><b>261</b> t/s decode</span><span class="badge"><b>262K</b> context</span><span class="badge"><b>32 GB</b> VRAM, één kaart</span>
         </div>
@@ -166,82 +166,82 @@
     <article class="card rv" data-d="2" data-tags="muziek">
       <div class="body"><span class="tag">YuE2 · eigen producties</span>
         <h3>Robas Muziek</h3>
-        <p>Alle muziek op deze site is zelf geproduceerd — door lokaal draaiende AI, gemixt en gekozen door mij. Twee previews, het volledige album en alle clips staan op de eigen muzieksite:</p>
+        <p>Alle muziek op deze site heb ik met lokaal draaiende AI zelf gemaakt, gemixt en gekozen. Twee previews, het volledige album en alle clips staan op de eigen muzieksite.</p>
         <div class="trackrow"><button data-p="1" aria-label="Preview afspelen">▶</button><div><div class="tt">Games Groove</div><div class="ts">upbeat · 0:40 preview</div></div><div class="prog"><i></i></div></div>
         <div class="trackrow"><button data-p="2" aria-label="Preview afspelen">▶</button><div><div class="tt">Epic Finale</div><div class="ts">cinema · 0:40 preview</div></div><div class="prog"><i></i></div></div>
-        <div class="row"><a class="mini solid" href="/muziek/">Robas Muziek — hele pagina →</a><a class="mini" href="https://www.youtube.com/@RobasMuziek" target="_blank" rel="noopener">YouTube @RobasMuziek</a></div>
+        <div class="row"><a class="mini solid" href="/muziek/">Robas Muziek: hele pagina →</a><a class="mini" href="https://www.youtube.com/@RobasMuziek" target="_blank" rel="noopener">YouTube @RobasMuziek</a></div>
       </div>
     </article>
 
     <article class="card rv" data-tags="beeld">
-      <div class="media" data-open="media/showreel.mp4" data-label="Robas Beeld — showreel 2026">
+      <div class="media" data-open="media/showreel.mp4" data-label="Robas Beeld: showreel 2026">
         <img src="media/poster-showreel.jpg" alt="Showreel poster" loading="lazy">
         <div class="play"><i>▶</i></div><span class="dur">reel</span>
       </div>
       <div class="body"><span class="tag">Beeld · AI-video</span>
         <h3>Showreel 2026</h3>
-        <p>Intros, promo-reels en animaties — van storyboard tot render draait alles lokaal (Wan2GP, ffmpeg-pijplijnen). In opdracht o.a. voor Judoclub Michigami.</p>
-        <div class="row"><button class="mini solid" data-open="media/showreel.mp4" data-label="Robas Beeld — showreel 2026">Afspelen ▶</button></div>
+        <p>Intro’s, promo-reels en animaties: van storyboard tot render draait alles lokaal (Wan2GP, ffmpeg-pijplijnen). Opdracht o.a. voor Judoclub Michigami.</p>
+        <div class="row"><button class="mini solid" data-open="media/showreel.mp4" data-label="Robas Beeld: showreel 2026">Afspelen ▶</button></div>
       </div>
     </article>
 
     <article class="card rv" data-d="1" data-tags="web">
-      <div class="media" data-open="https://judoclubmichigami.nl" data-type="demo" data-label="Judoclub Michigami — ledensysteem & website (live)">
+      <div class="media" data-open="https://judoclubmichigami.nl" data-type="demo" data-label="Judoclub Michigami: ledensysteem & website (live)">
         <img src="media/poster-judoclub.jpg" alt="Judoclub Michigami platform" loading="lazy">
         <div class="play"><i>↗</i></div>
       </div>
       <div class="body"><span class="tag blue">Web · live productie</span>
         <h3>Ledensysteem Judoclub Michigami</h3>
-        <p>Compleet platform voor een judoclub: inschrijvingen, contributie, nieuws en toernooien — gebouwd, getest en al jaren in echt gebruik door vrijwilligers.</p>
+        <p>Inschrijvingen, contributie, nieuws en toernooien: een compleet platform voor een judoclub, gebouwd, getest en al jaren echt gebruikt door vrijwilligers.</p>
         <div class="row"><a class="mini solid" href="https://judoclubmichigami.nl" target="_blank" rel="noopener">Live site</a>
           <a class="mini" href="https://github.com/RobertDingenouts/judoclub-michigami" target="_blank" rel="noopener">GitHub</a></div>
       </div>
     </article>
 
     <article class="card rv" data-d="2" data-tags="beeld">
-      <div class="media" data-open="https://www.youtube-nocookie.com/embed/2Y2AwNtH3Qk" data-type="yt" data-label="De Zachte Weg — 33 jaar Judoclub Michigami (1882–2027)">
-        <img src="media/poster-docu.jpg" alt="De Zachte Weg — mini-documentaire Judoclub Michigami" loading="lazy">
+      <div class="media" data-open="https://www.youtube-nocookie.com/embed/2Y2AwNtH3Qk" data-type="yt" data-label="De Zachte Weg: 33 jaar Judoclub Michigami (1882–2027)">
+        <img src="media/poster-docu.jpg" alt="De Zachte Weg: mini-documentaire Judoclub Michigami" loading="lazy">
         <div class="play"><i>▶</i></div>
       </div>
       <div class="body"><span class="tag">Film · documentaires</span>
-        <h3>De Zachte Weg — 33 jaar Michigami</h3>
-        <p>De clubgeschiedenis in ruim zes minuten: van Jigoro Kano in 1882 en de komst van judo naar Nederland, via de gouden jaren, tot de fusie met de OVJV. Beeld uit het clubarchief, vertelling en montage vanaf mijn rig — met hoofdstukken in de beschrijving.</p>
+        <h3>De Zachte Weg, 33 jaar Michigami</h3>
+        <p>De clubgeschiedenis in ruim zes minuten: van Jigoro Kano in 1882 tot de fusie met de OVJV. Beeld uit het archief, vertelling en montage op mijn rig.</p>
         <div class="row"><a class="mini solid" href="https://judoclubmichigami.nl" target="_blank" rel="noopener">Naar de club →</a></div>
       </div>
     </article>
 
     <article class="card rv" data-d="3" data-tags="web">
-      <div class="media" data-open="https://aisurprise.nl" data-type="demo" data-label="AISurprise.nl — studio-site met al de showcases en games">
+      <div class="media" data-open="https://aisurprise.nl" data-type="demo" data-label="AISurprise.nl: studio-site met al de showcases en games">
         <img src="media/poster-aisurprise.jpg" alt="AISurprise.nl" loading="lazy">
         <div class="play"><i>↗</i></div>
       </div>
       <div class="body"><span class="tag blue">Web · eerdere site</span>
         <h3>AISurprise.nl</h3>
-        <p>Mijn eerdere site met games, playground en demo's — veel van het werk hier is daar begonnen en getest.</p>
+        <p>Mijn vorige site met games, playground en demo's. Veel werk hier is daar begonnen en getest.</p>
         <div class="row"><a class="mini solid" href="https://aisurprise.nl" target="_blank" rel="noopener">Bekijk de site →</a></div>
       </div>
     </article>
 
     <article class="card rv" data-d="4" data-tags="web">
-      <div class="media" data-open="https://aisurprise.nl/apps/exameneisen-dashboard.html" data-type="demo" data-label="Exameneisen-dashboard — alle judo-eisen per band, filterbaar">
+      <div class="media" data-open="https://aisurprise.nl/apps/exameneisen-dashboard.html" data-type="demo" data-label="Exameneisen-dashboard: alle judo-eisen per band, filterbaar">
         <img src="media/poster-exameneisen.jpg" alt="Exameneisen dashboard" loading="lazy">
         <div class="play"><i>↗</i></div>
       </div>
       <div class="body"><span class="tag blue">Web · data</span>
         <h3>Exameneisen-dashboard</h3>
-        <p>Alle exameneisen per judoband, wit tot zwart: filterbaar per categorie en detailniveau. Complexe data, eindelijk leesbaar voor elke ouder en ieder lid.</p>
+        <p>Alle exameneisen per judoband, wit tot zwart: filterbaar per categorie en detailniveau. Complexe data, eindelijk leesbaar door ouders en leden.</p>
         <div class="row"><a class="mini solid" href="https://aisurprise.nl/apps/exameneisen-dashboard.html" target="_blank" rel="noopener">Open dashboard →</a></div>
       </div>
     </article>
 
     <article class="card rv" data-d="2" data-tags="web">
-      <div class="media" data-open="https://robertdingenouts.github.io/cursus-japans/" data-type="demo" data-label="Cursus Japans — interactief leerschrift (live)">
+      <div class="media" data-open="https://robertdingenouts.github.io/cursus-japans/" data-type="demo" data-label="Cursus Japans: interactief leerschrift (live)">
         <img src="media/poster-japans.jpg" alt="Cursus Japans website" loading="lazy">
         <div class="play"><i>↗</i></div>
       </div>
       <div class="body"><span class="tag blue">Web · educatie</span>
         <h3>Cursus Japans</h3>
-        <p>Interactief leerschrift voor hiragana, katakana en basiszinnen — met oefeningen en uitspraak. Ook de rode stip mag niet ontbreken.</p>
+        <p>Interactief leerschrift voor hiragana, katakana en basiszinnen, met oefeningen en uitspraak. De rode stip ook niet.</p>
         <div class="row"><a class="mini solid" href="https://robertdingenouts.github.io/cursus-japans/" target="_blank" rel="noopener">Volg de les →</a></div>
       </div>
     </article>
@@ -251,8 +251,8 @@
 <!-- ══ LIVE ══ -->
 <section id="live" class="wrap">
   <div class="sec-head">
-    <h2 class="rv">Live — klik en gebruik het</h2>
-    <p class="rv" data-d="1">Dit draait nu, geen screenshots. De Beehive-demo hieronder is statisch HTML — gebouwd door het lokale model, gehost zonder server.</p>
+    <h2 class="rv">Live, klik en gebruik het</h2>
+    <p class="rv" data-d="1">Geen screenshots, alles hier draait echt. De Beehive-demo is statisch HTML, gebouwd door het lokale model en gehost zonder server.</p>
   </div>
   <div class="livegrid">
     <div class="livebox rv"><iframe src="apps/beehive.html" title="Beehive live demo" loading="lazy" allowfullscreen></iframe></div>
@@ -264,35 +264,86 @@
       </div></div>
       <div class="card rv" data-d="2"><div class="body">
         <span class="tag red">YouTube</span><h3>@RobasLab</h3>
-        <p>Elke project-film met model, quant en tokens/seconde in de beschrijving.</p>
+        <p>Elke projectfilm met model, quant en tokens/seconde in de beschrijving.</p>
         <div class="row"><a class="btn ghost" style="margin-top:6px" href="https://www.youtube.com/@RobasLab" target="_blank" rel="noopener">Naar het kanaal</a></div>
       </div></div>
     </div>
   </div>
 </section>
 
+<!-- ══ NIEUW IN HET LAB ══ -->
+<section id="release" class="wrap">
+  <div class="release-kicker rv">
+    <span class="rel-dot"></span>
+    <span class="rel-tag">Nieuw in het lab</span>
+    <span class="rel-date">2026-11-20</span>
+  </div>
+  <h2 class="rel-title rv" data-d="1">Inkling-2-Mini</h2>
+  <p class="rel-lead rv" data-d="2">Een open-weights model van Thinking Machines Lab. 26,4 miljard params, waarvan 5,4 miljard elk token actief zijn.</p>
+  <div class="release-grid">
+    <div class="release-story rv">
+      <h3>Wat het is en waarom het ertoe doet</h3>
+      <p>Geen chatmodel. Gebouwd voor <b>agentic coding</b>: systemen die tools gebruiken en meerdere stappen plannen, niet alleen één vraag beantwoorden. Het model heeft 24 lagen in vier blokken van zes. Blokken 2 en 3, de middelste 12 lagen, lopen elk drie keer per token: 48 uitvoeringen van 24 opgeslagen lagen. Daarmee bereik je meer redenering per token, zonder extra gewichten. Thinking Machines Lab noemt het een <em>looped transformer</em>.</p>
+      <p>Het is geen vervanger voor de dagelijkse lokale draaier op dit park (de 177B op Strata). Het is een <b>ander gereedschap</b>, licht en lokaal, gericht op werk waar snelheid en stabiele richting voorop staan. Hier draait het als een <b>community-variant</b>, een fine-tune uit de community, via <b>ingine</b> (custom C++/CUDA, DSpark spec-decode). Een andere engine-familie dan de Strata-stack die de rest van het park draait.</p>
+      <h3>Wat de community vindt</h3>
+      <p>Het beeld is gemengd, en dat is eerlijk gezien ook de juiste conclusie. Op Hacker News klinkt het optimistisch, <b>"bonkers good if these benchmarks hold up in real-world scenarios"</b>, maar ook kritisch, <b>"the frontier models get better but the target for 'good enough' doesn't move"</b>, met de kanttekening dat de benchmarks mogelijk niet standhouden. Artificial Analysis plaatst het in de Intelligence Index op een plafond dat gelijkwaardig is aan Qwen3.8-27B, met circa <b>5 keer minder actieve params</b> (3,4B direct / 5,4B met loops) en ~2,8 keer minder compute. De onafhankelijke explainer op dev.to noemt die cijfers zelf <b>auteur-gerapporteerd</b>, niet onafhankelijk getest.</p>
+      <h3>Wat wij hier gemeten hebben</h3>
+      <p>De community-suite meet <b>client-side</b>, dezelfde suite als de upstream Strata-project-benchmarks, bewust 1:1 hergebruikt om het meetbaar vergelijkbaar te maken. De ruwe meting is eerlijk, maar <b>geen engine-klok</b>:</p>
+      <ul class="release-meas">
+        <li><b>391 t/s</b> chat-decode</li>
+        <li><b>772 t/s</b> agent-decode (vijf turns, ~12K tokens)</li>
+        <li><b>0,03 s</b> eerste token (kort) · <b>0,19 s</b> eerste token (agent)</li>
+        <li><b>262K</b> context (FP8 KV, niet 1M; VRAM-meter)</li>
+      </ul>
+      <p>Belangrijk om te weten: deze getallen zijn <b>suite-gemeten, niet engine-gerapporteerd</b>. De auteur van ingine rapporteert 490–570 t/s decode via DSpark spec-decode. Een andere meetmethodiek, en dus anders te lezen.</p>
+    </div>
+    <aside class="release-spec rv">
+      <h3>Specificaties</h3>
+      <dl class="spec">
+        <div><dt>Totaal</dt><dd>26,4B</dd></div>
+        <div><dt>Actief/token</dt><dd>3,4B direct · 5,4B met loops</dd></div>
+        <div><dt>Lagen</dt><dd>24 (4 blokken × 6) · 12×3</dd></div>
+        <div><dt>MoE</dt><dd>128 experts · 8 actief/token</dd></div>
+        <div><dt>Weights</dt><dd>~20 GB (19 GB op schijf)</dd></div>
+        <div><dt>Context</dt><dd>1M native · 262K hier</dd></div>
+        <div><dt>Numeriek</dt><dd>NVFP4 (4-bit) + MXFP8</dd></div>
+        <div><dt>License</dt><dd>Apache 2.0</dd></div>
+        <div><dt>Engine</dt><dd>ingine (custom CUDA)</dd></div>
+        <div><dt>Variant</dt><dd>community-finetune</dd></div>
+      </dl>
+      <div class="release-notes"><b>Belangrijke kanttekening:</b> deze opstelling draait bewust géén origineel, maar een community-finetune die bewust refusals verwijdert (KL 0,043 tov het origineel). Het is geen ander model, maar een ander veiligheidsprofiel.</div>
+      <div class="release-links">
+        <a href="https://github.com/RobertDingenouts/inkling-2-mini-rtx5090" target="_blank" rel="noopener"><span>GitHub showcase, met de gemeten cijfers</span><span class="arr">→</span></a>
+        <a href="https://huggingface.co/thinkingmachines/Inkling-2-Mini" target="_blank" rel="noopener"><span>HF model card (thinkingmachines)</span><span class="arr">→</span></a>
+        <a href="https://github.com/satellitedown/inkling-2-mini-abliterated-ingine" target="_blank" rel="noopener"><span>ingine, satellitedown</span><span class="arr">→</span></a>
+      </div>
+    </aside>
+  </div>
+  <p class="release-foot rv">Bronnen: <a href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener">Thinking Machines Lab</a> (eigen blogpost) · <a href="https://news.ycombinator.com/item?id=50581260" target="_blank" rel="noopener">Hacker News</a> (nov 2026) · <a href="https://artificialanalysis.ai/articles/inkling-2-mini" target="_blank" rel="noopener">Artificial Analysis</a> (Intelligence Index 20) · <a href="https://dev.to/jamilxt/inkling-2-mini-explained-how-a-looped-transformer-gets-more-reasoning-out-of-a-20gb-model-14a6" target="_blank" rel="noopener">dev.to</a> (jamilxt, 2026-11-22).</p>
+</section>
+
 <!-- ══ MODELARK ══ -->
 <section id="vergelijk" class="wrap">
   <span class="kicker rv">Lokaal vs frontier</span>
   <h2 class="rv">Dezelfde opdracht, eigen computer</h2>
-  <p class="sub rv">YouTube-kanaal AI Search test frontiermodellen met vaste opdrachten. Die prompts worden hier woordelijk nagebouwd op de eigen 5090 — zestien maanden later, met de modellen van nu. Eén prompt, één sessie: de auto-retry-laagjes uit zijn video's zitten hier niet in. Per opdracht de tijden en een eerlijk oordeel.</p>
+  <p class="sub rv">Het AI Search-kanaal test frontiermodellen met vaste opdrachten. Ik draai diezelfde opdrachten hier op mijn eigen 5090, zestien maanden later, met de modellen van nu. Eén prompt per keer, zonder herhaal- of retry-trucjes. Per opdracht: de tijden en een eerlijk oordeel.</p>
   <div class="vs rv">
     <div class="vrow"><div>
-      <div class="vmeta">AI Search: GPT-5.2 · dec 2025 · 0:47 — Prompt: “Make a visual simulation of a beehive construction…”</div>
+      <div class="vmeta">AI Search: GPT-5.2 · dec 2025 · 0:47 · Prompt: “Make a visual simulation of a beehive construction…”</div>
       <h3>Beehive-simulatie</h3>
-      <p>Bij hem: één prompt, fraaie animatie. Hier: <b>23,8 min</b>, één prompt, zonder tussenkomst — 90 bijen met paden, waggle-dance, sliders voor koloniegrootte en grondstoffen, ±1100 cellen op het einde.</p>
-      <div class="row"><span class="mini" data-open="media/film-beehive.mp4" data-type="film" data-label="Beehive — 23,8 min, 1 prompt, lokaal">Bekijk de film →</span></div>
+      <p>Bij hem: één prompt, fraaie animatie. Hier: <b>23,8 min</b>, één prompt, zonder tussenkomst. 90 bijen met paden, waggle-dance, sliders voor koloniegrootte en grondstoffen, ±1100 cellen aan het einde.</p>
+      <div class="row"><span class="mini" data-open="media/film-beehive.mp4" data-type="film" data-label="Beehive: 23,8 min, 1 prompt, lokaal">Bekijk de film →</span></div>
     </div><span class="vstat ok">Gelukt</span></div>
     <div class="vrow"><div>
-      <div class="vmeta">AI Search: “no AI model could get this right so far” · dec 2025 · 7:00 — raytracing, twee metalen bollen boven een straat</div>
+      <div class="vmeta">AI Search: “no AI model could get this right so far” · dec 2025 · 7:00 · raytracing, twee metalen bollen boven een straat</div>
       <h3>Raytraced bollen</h3>
-      <p>Twee pogingen, dezelfde prompt en hetzelfde model. In de eigen harness: <b>37,1 min</b>, mislukt — de bollen bleven boven het panorama zweven. In een agent-loop met screencontrole: <b>16,4 min</b>, geslaagd — stratreflecties in beide bollen, 15 sliders, 0 fouten. Kanttekening: HDR-panorama in plaats van 3D-straatmesh.</p>
-      <div class="row"><span class="mini" data-open="media/film-spheres.mp4" data-type="film" data-label="Metalen bollen boven de straat — raytracing, lokaal">Bekijk de film →</span></div>
+      <p>Twee pogingen, dezelfde prompt en hetzelfde model. In mijn harness: <b>37,1 min</b>, mislukt. De bollen bleven boven het panorama hangen. In een agent-loop met screencontrole: <b>16,4 min</b>, geslaagd. Stratreflecties in beide bollen, 15 sliders, 0 fouten. Kanttekening: HDR-panorama in plaats van 3D-straatmesh.</p>
+      <div class="row"><span class="mini" data-open="media/film-spheres.mp4" data-type="film" data-label="Metalen bollen boven de straat: raytracing, lokaal">Bekijk de film →</span></div>
     </div><span class="vstat ok">Gelukt<br><small>na 1 mislukte poging</small></span></div>
     <div class="vrow"><div>
-      <div class="vmeta">Eigen variant op de bollen-opdracht · nov 2026 — zelfde prompt, Rotterdam als straat</div>
+      <div class="vmeta">Eigen variant op de bollen-opdracht · nov 2026 · zelfde prompt, Rotterdam als straat</div>
       <h3>Bollen op de Erasmusbrug</h3>
-      <p>Fysisch klopte alles (bollen op straat, contactschaduwen, HDR-reflexen), maar het panorama uit twee foto’s overtuigde niet: spiegeling verkeerd en het beeld verloopt halverwege. Uiteinde: van de site afgehaald. Hoort er ook bij.</p>
+      <p>Fysisch klopt alles (bollen op straat, contactschaduwen, HDR-reflexen), maar het panorama uit twee foto’s overtuigen niet: spiegeling verkeerd en het beeld loopt half weg. Uiteindelijk: van de site afgehaald. Hoort er ook bij.</p>
     </div><span class="vstat fail">Mislukt</span></div>
     <div class="vrow"><div>
       <div class="vmeta">AI Search: GPT-5.4 · mrt 2026 en Fable 5.2 · nov 2026</div>
@@ -301,38 +352,38 @@
       <div class="vlist"><span>Aarde-twin 3D</span><span>Piano-roll</span><span>Mecha-platformer</span><span>Explainer-video</span><span>Chopin-piano</span><span>CML-onderzoek</span><span>Fabrieksvee-ideeën</span></div>
     </div><span class="vstat wait">Wachtrij</span></div>
   </div>
-  <p class="vlesson rv">De grootste finding tot nu toe: bij de bollen-opdracht kon het model het al — de eerste mislukking zat in de harness eromheen, niet in het model. Het verschil tussen een werkende agent en een falende zit in de lus van bouwen → screenshot → correctie, niet in het aantal parameters.</p>
+  <p class="vlesson rv">De grootste les tot nu toe: bij de bollen-opdracht kon het model het al, de eerste mislukking zat in de harness eromheen, niet in het model. Het verschil tussen een werkende agent en een falende zit in de lus van bouwen → screenshot → correctie, niet in het aantal parameters.</p>
   <p class="mnote rv">Methoden, ruwe runs en meetingtabellen: <a href="https://github.com/RobertDingenouts/qwen38-flashnext-strata-rtx5090" target="_blank" rel="noopener">meetrepo op GitHub</a>.</p>
 </section>
 <section id="modelpark" class="wrap">
   <div class="sec-head">
-    <h2 class="rv">Het modelpark — <em> alles</em> draait lokaal</h2>
-    <p class="rv" data-d="1">De modellen die hier draaien of hebben gedraaid: 40+ stuks over zeven disciplines, op één RTX 5090. Altijd met de configuratie erbij, geen abonnementen.</p>
+    <h2 class="rv">Het modelpark: <em>alles</em> draait lokaal</h2>
+    <p class="rv" data-d="1">Modellen die hier draaien of hebben gedraaid: 40+ stuks over zeven disciplines, op één RTX 5090. Geen abonnementen, elke waarde met de config erbij.</p>
     <div class="row rv" data-d="2" style="gap:12px;margin-top:12px;flex-wrap:wrap">
       <span class="badge"><b>40+</b> modellen</span><span class="badge"><b>7</b> disciplines</span><span class="badge"><b>1</b> GPU</span><span class="badge"><b>0</b> cloud-API's</span>
     </div>
   </div>
   <div class="mparks">
     <article class="mcard rv" data-d="1"><h3>Taal &amp; agents</h3>
-      <ul><li>Qwen3.8-Flash-Next 125B — eigen variant, 261 t/s gemeten</li><li>Qwen3.8-27B Uncensored</li><li>Qwen3-30B-A3B · NVFP4</li><li>GLM-4.5V — multimodaal, kijkt</li></ul>
+      <ul><li>Qwen3.8-Flash-Next 125B: eigen variant, 261 t/s gemeten</li><li>Qwen3.8-27B Uncensored</li><li>Qwen3-30B-A3B · NVFP4</li><li>GLM-4.5V: multimodaal, kijkt</li></ul>
       <p class="mnote">Serveert via ExLlamaV3 · llama.cpp · Strata + DFlash2, gemeten 261 t/s</p></article>
     <article class="mcard rv" data-d="2"><h3>Beeld</h3>
-      <ul><li>Qwen-Image 2.1 — ook NVFP4</li><li>MOSS-Image SFT + 8-staps turbo-LoRA</li><li>Eigen LoRA-trainingen — huisstijl, tekstposters</li><li>Bonsai Image 4B — licht en snel</li></ul>
+      <ul><li>Qwen-Image 2.1: ook NVFP4</li><li>MOSS-Image SFT + 8-staps turbo-LoRA</li><li>Eigen LoRA-trainingen: huisstijl, tekstposters</li><li>Bonsai Image 4B: licht en snel</li></ul>
       <p class="mnote">Getraind en gegenereerd in ComfyUI / Wan2GP</p></article>
     <article class="mcard rv" data-d="3"><h3>Video</h3>
-      <ul><li>MiniMax H3 — tekst/beeld/ref → video, 4–8 stappen</li><li>Wan 2.2 — via Wan2GP</li><li>Kling 2.0</li></ul>
-      <p class="mnote">Van prompt tot clip op eigen machine — films op deze site zijn zo gemaakt</p></article>
+      <ul><li>MiniMax H3: tekst/beeld/ref → video, 4–8 stappen</li><li>Wan 2.2, via Wan2GP</li><li>Kling 2.0</li></ul>
+      <p class="mnote">Van prompt tot clip op eigen machine. Films op deze site zijn zo gemaakt.</p></article>
     <article class="mcard rv" data-d="4"><h3>Stem · TTS</h3>
-      <ul><li>VibeVoice-7B — lange dialoog, natuurlijk</li><li>Audio8-TTS Realistic-Air</li><li>dots.tts — klonen van mijn eigen stem</li></ul>
+      <ul><li>VibeVoice-7B: lange dialoog, natuurlijk</li><li>Audio8-TTS Realistic-Air</li><li>dots.tts: klonen van mijn eigen stem</li></ul>
       <p class="mnote">Voor voiceovers, video's en agent-gesprekken</p></article>
     <article class="mcard rv" data-d="5"><h3>Spraak → tekst · STT</h3>
-      <ul><li>faster-whisper large-v3</li><li>wav2vec2 XLSR — speciaal Nederlands</li><li>Parakeet — snelle transcriptie</li><li>MossFormer2 — ruis weg vóór het transcribeert</li></ul>
+      <ul><li>faster-whisper large-v3</li><li>wav2vec2 XLSR: speciaal Nederlands</li><li>Parakeet: snelle transcriptie</li><li>MossFormer2: ruis weg vóór het transcribeert</li></ul>
       <p class="mnote">Voor clubnotulen, interviews en ondertiteling</p></article>
     <article class="mcard rv" data-d="6"><h3>Muziek</h3>
-      <ul><li>YuE2-3B — complete nummers</li><li>ACE-Step — nummers met zang</li><li>MERT + SheetSage2 — analyse en partituren</li></ul>
+      <ul><li>YuE2-3B: complete nummers</li><li>ACE-Step: nummers met zang</li><li>MERT + SheetSage2: analyse en partituren</li></ul>
       <p class="mnote">Alle muziek op deze site is hiermee zelf geproduceerd</p></article>
     <article class="mcard rv" data-d="7"><h3>Beslissen &amp; meten</h3>
-      <ul><li>Strata + DFlash2 — eigen engine, 261 t/s gemeten</li><li>Clef-Flash 9B — getest in de decision-ladder</li><li>Kev-4B — getest, afgevallen: eerlijk rapport</li><li>Embeddings + rerankers — eigen zoekmachine-basis</li></ul>
+      <ul><li>Strata + DFlash2: eigen engine, 261 t/s gemeten</li><li>Clef-Flash 9B: getest in de decision-ladder</li><li>Kev-4B: getest, afgevallen, eerlijk rapport</li><li>Embeddings + rerankers: eigen zoekmachine-basis</li></ul>
       <p class="mnote">Alles gekozen op gemeten data, niet op hypes</p></article>
   </div>
 </section>
@@ -343,21 +394,21 @@
   <div class="sec-head"><h2 class="rv">Over Robert</h2></div>
   <div class="over">
     <div class="prose rv">
-      <p><b>Robert Dingenouts</b> — timmerman. Alles wat ik over AI en code weet, heb ik mezelf aangeleerd door het te bouwen; dat gold ook voor hout en cijfers.</p>
-      <p>Robas Lab is de hoek waar ik dat vastleg: één computer met een RTX 5090 en modellen die ik zelf heb gezet. Niks via een cloud-abonnement — gebouwd, gemeten en gefilmd thuis.</p>
-      <p>Zoom je liever uit? Achter dit merk staan ook <a href="https://aisurprise.nl" target="_blank" rel="noopener">AISurprise.nl</a> en jaren praktijk met <a href="https://judoclubmichigami.nl" target="_blank" rel="noopener">Judoclub Michigami</a> — de club waar ook die rode stip vandaan komt.</p>
+      <p><b>Robert Dingenouts</b>: timmerman. Alles wat ik over AI en code weet, heb ik mezelf aangeleerd door het te bouwen, en dat gold ook voor hout en cijfers.</p>
+      <p>Robas Lab is de hoek waar ik dat vastleg: één computer met een RTX 5090, en modellen die ik zelf heb gezet. Geen cloud-abonnement, gebouwd, gemeten en gefilmd thuis.</p>
+      <p>Wil je het bredere plaatje zien? Achter dit merk staan AISurprise.nl en jaren praktijk met Judoclub Michigami, de club waar ook de rode stip vandaan komt.</p>
       <div class="timeline" style="margin-top:26px">
         <div class="tl"><h4>Havo → accountancy</h4><span>Daarna bewust voor theoretisch werk gekozen.</span></div>
-        <div class="tl"><h4>15–20 jaar timmerman</h4><span>Praktisch vakmanschap; veel zelf aangeleerd, altijd doorleren.</span></div>
+        <div class="tl"><h4>15–20 jaar timmerman</h4><span>Praktisch vakmanschap, veel zelf aangeleerd, altijd doorleren.</span></div>
         <div class="tl"><h4>Bouwen met lokale AI</h4><span>In mijn vrije tijd: lokale LLM's en inference-engines (Strata, DFlash2) op gewone PC-hardware.</span></div>
-        <div class="tl"><h4>Producten</h4><span>Ledensysteem Judoclub Michigami, 100-HTML-showcase, AI-Search-replica's, eigen muziek — te zien op deze site.</span></div>
+        <div class="tl"><h4>Producten</h4><span>Ledensysteem Judoclub Michigami, 100-HTML-showcase, AI-Search-replica's, eigen muziek: te zien op deze site.</span></div>
       </div>
     </div>
     <div class="principles">
-      <div class="pr rv"><b>Meten ≠ geloven</b><span>Elk snelheidscijfer komt uit gemeten runs — met context en config erbij. Eén sample is voorlopig, drie is een patroon.</span></div>
+      <div class="pr rv"><b>Meten ≠ geloven</b><span>Elk snelheidscijfer komt uit gemeten runs, met context en config erbij. Eén sample is voorlopig, drie is een patroon.</span></div>
       <div class="pr rv" data-d="1"><b>Lokaal eerst</b><span>Waar het kan, draait het thuis: geen data weg, geen maandelijkse API-rekening, geen verrassingen.</span></div>
-      <div class="pr rv" data-d="2"><b>Maximaal wat kan</b><span>Altijd de langste context en de beste kwaliteit die haalbaar is — 262K en KV Q8 zijn standaard, niet optioneel.</span></div>
-      <div class="pr rv" data-d="3"><b>Uitleg zonder rook</b><span>Techniek leg ik uit alsof je het volgend weekend zelf wilt draaien. Cijfers ernaast.</span></div>
+      <div class="pr rv" data-d="2"><b>Maximaal wat kan</b><span>Altijd de grootste context en de beste kwaliteit die haalbaar is. 262K en KV Q8 zijn standaard, niet optioneel.</span></div>
+      <div class="pr rv" data-d="3"><b>Uitleg zonder rook</b><span>Techniek leg ik uit alsof je het volgend weekend zelf wilt nadoen. Cijfers ernaast.</span></div>
     </div>
   </div>
 </section>
@@ -367,7 +418,7 @@
   <div class="contact rv">
     <div class="lbl">Interesse? Eén mail volstaat</div>
     <a class="mail" href="mailto:robaslab@gmail.com">robaslab@gmail.com</a>
-    <p class="lead" style="max-width:560px;margin:0 auto">Vraag, demo of gewoon nieuwsgierig — ik reageer persoonlijk.</p>
+    <p class="lead" style="max-width:560px;margin:0 auto">Vraag, demo of gewoon nieuwsgierig: ik reageer persoonlijk.</p>
     <div class="cta" style="justify-content:center">
       <a class="btn gold" href="mailto:robaslab@gmail.com">Mail starten</a>
       <button class="btn ghost" data-copy="robaslab@gmail.com">E-mail kopiëren</button>
@@ -382,7 +433,7 @@
 
 <footer><div class="wrap foot">
   <span>© <span id="yy"></span> Robas Lab · Robert Dingenouts · <a href="mailto:robaslab@gmail.com">robaslab@gmail.com</a></span>
-  <span>gebouwd &amp; gehost met 1× RTX 5090 — <a href="https://aisurprise.nl" target="_blank" rel="noopener">aisurprise.nl</a> · <a href="https://judoclubmichigami.nl" target="_blank" rel="noopener">judoclubmichigami.nl</a></span>
+  <span>gebouwd en gehost met 1× RTX 5090: <a href="https://aisurprise.nl" target="_blank" rel="noopener">aisurprise.nl</a> · <a href="https://judoclubmichigami.nl" target="_blank" rel="noopener">judoclubmichigami.nl</a></span>
 </div></footer>
 
 <!-- ══ LIGHTBOX + TOAST ══ -->

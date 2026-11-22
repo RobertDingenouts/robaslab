@@ -179,10 +179,10 @@ $$(".chip").forEach(ch=>ch.addEventListener("click",()=>{
 (function(){
   const mail="robaslab@gmail.com";
   const T={
-    info:["Info — Robas Lab","Beste Robert,\n\nIk ben nieuwsgierig naar wat lokale AI voor mij kan betekenen.\n\nKort over mij/mijn organisatie:\n— \n\nGraag (vrijblijvend) een demo of uitleg.\n\nGroeten,"],
-    service:["Service — lokale AI-setup","Beste Robert,\n\nIk wil hulp bij mijn (lokale) AI-setup.\n\nWat heb ik nu:\n— \nWat wil ik erreichen:\n— \n\nGroeten,"],
-    freelance:["Freelance — projectaanvraag","Beste Robert,\n\nIk wil een project laten bouwen.\n\nProject in korte lijnen:\n— \nGewenste periode:\n— \n\nGroeten,"],
-    sollic:["Sollicitatie — Robert Dingenouts","Beste Robert,\n\nNaar aanleiding van uw showcase op robaslab.nl nodigen wij u graag uit voor een gesprek.\n\nOver de functie/rol:\n— \n\nGroeten,"]
+    info:["Info: Robas Lab","Beste Robert,\n\nIk ben nieuwsgierig naar wat lokale AI voor mij kan betekenen.\n\nKort over mij/mijn organisatie:\n\n\nGraag (vrijblijvend) een demo of uitleg.\n\nGroeten,"],
+    service:["Service: lokale AI-setup","Beste Robert,\n\nIk wil hulp bij mijn (lokale) AI-setup.\n\nWat heb ik nu:\n\nWat wil ik bereiken:\n\n\nGroeten,"],
+    freelance:["Freelance: projectaanvraag","Beste Robert,\n\nIk wil een project laten bouwen.\n\nProject in korte lijnen:\n\nGewenste periode:\n\n\nGroeten,"],
+    sollic:["Sollicitatie: Robert Dingenouts","Beste Robert,\n\nNaar aanleiding van uw showcase op robaslab.nl nodigen wij u graag uit voor een gesprek.\n\nOver de functie/rol:\n\n\nGroeten,"]
   };
   $$("[data-ask]").forEach(a=>{const t=T[a.dataset.ask];if(!t)return;
     a.href=`mailto:${mail}?subject=${encodeURIComponent(t[0])}&body=${encodeURIComponent(t[1])}`;});

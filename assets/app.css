@@ -306,3 +306,52 @@ html{scrollbar-color:var(--acc) var(--bg2);scrollbar-width:thin}
 .vrow .mini{cursor:pointer;font-size:13px;font-weight:600;border:1px solid var(--line2);border-radius:9px;padding:8px 13px;color:var(--tx);text-decoration:none}
 .vrow .mini:hover{border-color:var(--acc);color:var(--acc)}
 @media(max-width:760px){.vrow{flex-wrap:wrap}.vstat{order:-1}}
+
+/* ── release-story (nieuw in het lab) ── */
+.release-kicker{display:inline-flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--acc);
+  border:1px solid rgba(217,164,65,.35);border-radius:999px;padding:9px 18px;background:rgba(217,164,65,.06);margin-bottom:18px}
+.rel-dot{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 14px rgba(228,52,46,.85);animation:ping 2.4s ease-out infinite}
+.rel-tag{color:var(--tx);letter-spacing:.18em}
+.rel-date{color:var(--dim);font-variant-numeric:tabular-nums}
+.rel-title{font-size:clamp(38px,6.5vw,58px);font-weight:800;line-height:1.05;letter-spacing:-.02em;max-width:15ch}
+.rel-title em{font-style:normal;background:linear-gradient(92deg,var(--acc2),var(--acc) 55%,var(--red));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.rel-lead{color:var(--dim);max-width:680px;font-size:clamp(15px,1.9vw,18.5px);line-height:1.62;margin-top:18px}
+.rel-lead b{color:var(--tx)}
+.release-grid{display:grid;grid-template-columns:1.34fr 1fr;gap:28px;margin-top:34px;align-items:stretch}
+.release-story{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px 26px 22px;backdrop-filter:var(--glass)}
+.release-story h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin:0 0 10px}
+.release-story h3:not(:first-child){margin-top:22px}
+.release-story p{color:var(--dim);font-size:15px;line-height:1.72;margin:0 0 12px}
+.release-story p b{color:var(--tx);font-weight:600}
+.release-story p a{color:var(--acc);text-decoration:none;border-bottom:1px solid rgba(217,164,65,.35)}
+.release-story p a:hover{border-bottom-color:var(--acc)}
+.release-spec{background:var(--panel-solid);border:1px solid var(--line);border-radius:var(--r);padding:24px;backdrop-filter:blur(8px);
+  display:flex;flex-direction:column;gap:16px}
+.release-spec h3{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin:0}
+.spec{display:flex;flex-direction:column;gap:0}
+.spec div{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.spec div:last-child{border-bottom:0}
+.spec dt{color:var(--dim)}.spec dd{font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;color:var(--tx);text-align:right;font-size:12.5px}
+.release-notes{font-size:13px;line-height:1.65;color:var(--dim);border-left:3px solid var(--red);padding:4px 12px;background:rgba(228,52,46,.05);border-radius:0 8px 8px 0}
+.release-notes b{color:var(--tx)}
+.release-links{display:flex;flex-direction:column;gap:9px;margin-top:auto}
+.release-links a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 13px;border:1px solid var(--line);border-radius:10px;
+  color:var(--tx);font-size:13px;text-decoration:none;transition:.2s}
+.release-links a:hover{border-color:var(--acc);color:var(--acc)}
+.release-links a span.arr{color:var(--dim);font-size:12px}
+.release-links a:hover span.arr{color:var(--acc)}
+.release-foot{margin-top:22px;font-size:12.5px;color:#77839a;border-top:1px solid var(--line);padding-top:14px;max-width:920px}
+.release-foot code{font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;font-size:11.5px;color:var(--dim);
+  background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+@media(max-width:940px){.release-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.release-kicker{letter-spacing:.16em;font-size:10px}.rel-title{font-size:34px}.release-story{padding:20px}}
+
+/* release — gemeten-blokken */
+.release-meas{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:7px}
+.release-meas li{padding:9px 12px;background:rgba(255,255,255,.028);border:1px solid var(--line);border-radius:9px;color:var(--dim);font-size:13.5px;line-height:1.5}
+.release-meas li b{color:var(--acc2);font-weight:700;margin-right:7px;font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;font-size:12.5px}
+
+/* release — footnote links */
+.release-foot a{color:var(--acc);text-decoration:none;border-bottom:1px dotted rgba(217,164,65,.4)}
+.release-foot a:hover{border-bottom-color:var(--acc)}
