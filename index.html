@@ -284,18 +284,18 @@
     <div class="release-story rv">
       <h3>Wat het is en waarom het ertoe doet</h3>
       <p>Geen chatmodel. Gebouwd voor <b>agentic coding</b>: systemen die tools gebruiken en meerdere stappen plannen, niet alleen één vraag beantwoorden. Het model heeft 24 lagen in vier blokken van zes. Blokken 2 en 3, de middelste 12 lagen, lopen elk drie keer per token: 48 uitvoeringen van 24 opgeslagen lagen. Daarmee bereik je meer redenering per token, zonder extra gewichten. Thinking Machines Lab noemt het een <em>looped transformer</em>.</p>
-      <p>Het is geen vervanger voor de dagelijkse lokale draaier op dit park (de 177B op Strata). Het is een <b>ander gereedschap</b>, licht en lokaal, gericht op werk waar snelheid en stabiele richting voorop staan. Hier draait het als een <b>community-variant</b>, een fine-tune uit de community, via <b>ingine</b> (custom C++/CUDA, DSpark spec-decode). Een andere engine-familie dan de Strata-stack die de rest van het park draait.</p>
+      <p>Het is geen vervanger voor de dagelijkse lokale draaier op dit park (de 177B op Strata). Het is een <b>ander gereedschap</b>, licht en lokaal, gericht op werk waar snelheid en stabiele richting voorop staan. Hier draait het als een <b>community-variant</b>, een fine-tune uit de community van satellitedown, via <b>ingine</b> (custom C++/CUDA, DSpark spec-decode). Een andere engine-familie dan de Strata-stack die de rest van het park draait.</p>
       <h3>Wat de community vindt</h3>
       <p>Het beeld is gemengd, en dat is eerlijk gezien ook de juiste conclusie. Op Hacker News klinkt het optimistisch, <b>"bonkers good if these benchmarks hold up in real-world scenarios"</b>, maar ook kritisch, <b>"the frontier models get better but the target for 'good enough' doesn't move"</b>, met de kanttekening dat de benchmarks mogelijk niet standhouden. Artificial Analysis plaatst het in de Intelligence Index op een plafond dat gelijkwaardig is aan Qwen3.8-27B, met circa <b>5 keer minder actieve params</b> (3,4B direct / 5,4B met loops) en ~2,8 keer minder compute. De onafhankelijke explainer op dev.to noemt die cijfers zelf <b>auteur-gerapporteerd</b>, niet onafhankelijk getest.</p>
       <h3>Wat wij hier gemeten hebben</h3>
       <p>De community-suite meet <b>client-side</b>, dezelfde suite als de upstream Strata-project-benchmarks, bewust 1:1 hergebruikt om het meetbaar vergelijkbaar te maken. De ruwe meting is eerlijk, maar <b>geen engine-klok</b>:</p>
       <ul class="release-meas">
-        <li><b>391 t/s</b> chat-decode</li>
-        <li><b>772 t/s</b> agent-decode (vijf turns, ~12K tokens)</li>
-        <li><b>0,03 s</b> eerste token (kort) · <b>0,19 s</b> eerste token (agent)</li>
+        <li><b>408 t/s</b> chat-decode</li>
+        <li><b>754 t/s</b> agent-decode (zes turns, ~12K tokens)</li>
+        <li><b>0,03 s</b> eerste token (kort) · <b>0,18 s</b> eerste token (agent)</li>
         <li><b>262K</b> context (FP8 KV, niet 1M; VRAM-meter)</li>
       </ul>
-      <p>Belangrijk om te weten: deze getallen zijn <b>suite-gemeten, niet engine-gerapporteerd</b>. De auteur van ingine rapporteert 490–570 t/s decode via DSpark spec-decode. Een andere meetmethodiek, en dus anders te lezen.</p>
+      <p>Belangrijk om te weten: deze getallen zijn <b>suite-gemeten, niet engine-gerapporteerd</b>, en ze zijn genomen met de nieuwe build en het nieuwe abliteration-file van 22 november (d8a1bc5 / 9dcfb4f). De gewichten en het model zijn onveranderd. De auteur van ingine rapporteert 490–560 t/s decode via DSpark spec-decode. Een andere meetmethodiek, en dus anders te lezen.</p>
     </div>
     <aside class="release-spec rv">
       <h3>Specificaties</h3>
@@ -311,11 +311,12 @@
         <div><dt>Engine</dt><dd>ingine (custom CUDA)</dd></div>
         <div><dt>Variant</dt><dd>community-finetune</dd></div>
       </dl>
-      <div class="release-notes"><b>Belangrijke kanttekening:</b> deze opstelling draait bewust géén origineel, maar een community-finetune die bewust refusals verwijdert (KL 0,043 tov het origineel). Het is geen ander model, maar een ander veiligheidsprofiel.</div>
+      <div class="release-notes"><b>Belangrijke kanttekening:</b> deze opstelling draait bewust géén origineel, maar een community-finetune die refusals verwijdert. De nieuwste abliteration-file (9dcfb4f) ligt dicht bij het origineel: KL 0,005 op de technische tekst, KL 0,014 op de antwoorden, 96,4% top-1 agreement. Het is een ander veiligheidsprofiel, niet een ander model.</div>
       <div class="release-links">
         <a href="https://github.com/RobertDingenouts/inkling-2-mini-rtx5090" target="_blank" rel="noopener"><span>GitHub showcase, met de gemeten cijfers</span><span class="arr">→</span></a>
         <a href="https://huggingface.co/thinkingmachines/Inkling-2-Mini" target="_blank" rel="noopener"><span>HF model card (thinkingmachines)</span><span class="arr">→</span></a>
         <a href="https://github.com/satellitedown/inkling-2-mini-abliterated-ingine" target="_blank" rel="noopener"><span>ingine, satellitedown</span><span class="arr">→</span></a>
+        <a href="https://huggingface.co/satellitedown/Inkling-2-Mini-abliterated-ingine" target="_blank" rel="noopener"><span>abliterated model card (satellitedown)</span><span class="arr">→</span></a>
       </div>
     </aside>
   </div>
