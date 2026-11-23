@@ -295,7 +295,8 @@
         <li><b>0,03 s</b> eerste token (kort) · <b>0,18 s</b> eerste token (agent)</li>
         <li><b>262K</b> context (FP8 KV, niet 1M; VRAM-meter)</li>
       </ul>
-      <p>Belangrijk om te weten: deze getallen zijn <b>suite-gemeten, niet engine-gerapporteerd</b>, en ze zijn genomen met de nieuwe build en het nieuwe abliteration-file van 22 november (d8a1bc5 / 9dcfb4f). De gewichten en het model zijn onveranderd. De auteur van ingine rapporteert 490–560 t/s decode via DSpark spec-decode. Een andere meetmethodiek, en dus anders te lezen.</p>
+      <p>Belangrijk om te weten: deze getallen zijn <b>suite-gemeten, niet engine-gerapporteerd</b>, en ze zijn genomen met de nieuwe build en het nieuwe abliteration-file van 22 november (d8a1bc5 / 9dcfb4f). De gewichten en het model zijn onveranderd. De auteur van ingine rapporteert 490&ndash;560 t/s decode via DSpark spec-decode. Een andere meetmethodiek, en dus anders te lezen.</p>
+      <p>Op 23 november draaide ik hetzelfde model ook via de Strata-engine (inkling2-build). Solo kwam het daar op 161 t/s chat-decode: de voorspeller van de auteur werd genegeerd en de gesprekscache ontbreekt op die build, dus dat verschil is eerlijk gemeten en benoemd. Wat die build wél goed doet is opschalen: met 4, 8, 16 en 32 agenten tegelijk meet ik 276, 367, 495 en 606 tokens per seconde gezamenlijk, bij wachttijden van 1,8 tot 6,5 seconden per ronde. Solo is deze ingine-versie dus sneller; voor veel parallel lokaal agentwerk staat de Strata-variant nu met een gemeten curve in de meetrepo.</p>
     </div>
     <aside class="release-spec rv">
       <h3>Specificaties</h3>
