@@ -1,0 +1,95 @@
+/* ══ TTS-pagina (deelt tokens + header/footer uit app.css) ══ */
+.thero{padding:104px 22px 26px}
+.thero h1{font-size:clamp(2.2rem,5.4vw,3.9rem);line-height:1.06;margin:16px 0 18px;letter-spacing:-.02em}
+.thero h1 em{font-style:normal;color:var(--acc)}
+.thero .lead{max-width:820px}
+
+/* equalizer-band onder de hero */
+.waveband{display:flex;align-items:flex-end;gap:4px;height:74px;margin-top:44px;opacity:.62}
+.waveband i{flex:1;min-width:3px;height:14%;border-radius:3px;background:linear-gradient(180deg,var(--acc2),var(--acc));
+  animation:eq 2.6s ease-in-out infinite;animation-delay:var(--d,0s);transform-origin:bottom}
+@keyframes eq{0%,100%{height:12%}22%{height:74%}41%{height:30%}63%{height:96%}80%{height:44%}}
+@media (prefers-reduced-motion:reduce){.waveband i{animation:none;height:34%}}
+
+/* ══ luisteren ══ */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.tcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px 22px;
+  display:flex;flex-direction:column;gap:14px;backdrop-filter:var(--glass)}
+.tcard:hover{border-color:rgba(217,164,65,.4)}
+.tcard h3{font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.tsay{font-size:1.02rem;line-height:1.6;color:var(--tx);font-style:italic}
+.tcard audio{width:100%;height:38px;margin-top:auto;filter:invert(1) hue-rotate(180deg) saturate(.4) brightness(.92)}
+.tverdict{font-size:.82rem;color:var(--tx);border-top:1px dashed var(--line2);padding-top:12px}
+.tverdict span{display:block;color:var(--dim);margin-top:5px;line-height:1.5}
+.tverdict.ok::before{content:"● ";color:#57c98a}
+.tverdict.mid::before{content:"● ";color:var(--acc)}
+.tverdict pend{color:var(--dim)}
+.tverdict pend::before{content:"○ ";color:var(--dim)}
+.tnext{grid-column:span 3;background:var(--panel-solid)}
+.tstat{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--line2)}
+.tstat.loop{color:var(--acc);border-color:rgba(217,164,65,.5);background:rgba(217,164,65,.1)}
+
+/* specificatie-kaart */
+.tspec{background:var(--panel-solid);border:1px solid var(--line);border-radius:var(--r);padding:24px 22px}
+.tspec h3{font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+.tspec dl{display:grid;grid-template-columns:1fr 1.5fr;gap:9px 14px;font-size:.86rem}
+.tspec dt{color:var(--dim)}
+.tspec dd{margin:0;color:var(--tx)}
+.tspec .mnote{margin-top:16px}
+
+/* ══ meettabel ══ */
+.ttable{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--panel)}
+.trow{display:grid;grid-template-columns:1.05fr 1.35fr 1.1fr;gap:16px;padding:13px 20px;border-top:1px solid var(--line);font-size:.88rem}
+.trow:first-child{border-top:0}
+.trow.thead{background:var(--panel-solid);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.trow span:first-child{color:var(--dim)}
+.trow span:nth-child(2){color:var(--tx)}
+.trow span:nth-child(3){color:var(--dim)}
+#meten .mnote{max-width:840px}
+
+/* ══ stappen ══ */
+.tsteps{display:grid;gap:14px;max-width:900px}
+.tstep{display:grid;grid-template-columns:52px 1fr;gap:18px;background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--r);padding:20px 22px}
+.tstep b{font-family:var(--font-d,inherit);font-size:1.6rem;color:var(--acc);line-height:1}
+.tstep h4{font-size:1rem;margin-bottom:6px}
+.tstep p{color:var(--dim);font-size:.92rem;line-height:1.65;margin:0}
+
+/* ══ eerlijk-blok ══ */
+.tfail{margin-top:26px;background:rgba(228,52,46,.06);border:1px solid rgba(228,52,46,.28);
+  border-left:3px solid var(--red);border-radius:var(--r);padding:24px 26px;max-width:900px}
+.tfail h3{font-size:1.02rem;margin-bottom:12px;color:var(--tx)}
+.tfail p{color:var(--dim);font-size:.94rem;line-height:1.7;margin:0 0 12px}
+.tfail p:last-child{margin-bottom:0}
+.tfail b{color:var(--tx)}
+
+/* ══ zelf draaien ══ */
+.trun{background:var(--panel-solid);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px}
+.trun pre{overflow:auto;margin:0}
+.trun code{font-size:.86rem;line-height:1.7;color:var(--tx)}
+.tdeps{margin-top:14px;color:var(--dim);font-size:.86rem;line-height:1.6}
+.tlinks{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:22px}
+.tlink{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.tlink h4{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:8px}
+.tlink p{color:var(--dim);font-size:.9rem;line-height:1.65;margin:0}
+.tlink a{color:var(--tx);text-decoration:none;border-bottom:1px solid rgba(217,164,65,.5)}
+.tlink a:hover{color:var(--acc)}
+
+/* ══ responsive ══ */
+@media (max-width:940px){
+  .tgrid{grid-template-columns:1fr 1fr}
+  .tnext{grid-column:span 2}
+  .trow{grid-template-columns:1fr;gap:5px;padding:14px 18px}
+  .trow.thead{display:none}
+  .trow span:nth-child(2)::before,.trow span:nth-child(3)::before{display:block;font-size:.66rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--acc);margin-bottom:3px}
+  .trow span:nth-child(2)::before{content:"ons model"}
+  .trow span:nth-child(3)::before{content:"het origineel"}
+  .tlinks{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .tgrid{grid-template-columns:1fr}
+  .tnext{grid-column:span 1}
+  .thero{padding-top:78px}
+  .waveband{height:52px}
+}
