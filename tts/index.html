@@ -21,7 +21,7 @@
 <header><div class="wrap"><nav>
   <a class="brand" href="/">ROB<b>AS</b> LAB<span class="dot"></span></a>
   <span class="links">
-    <a href="#luisteren">Luisteren</a><a href="#meten">Meetwaarden</a><a href="#recept">Recept</a><a href="#zelf">Zelf draaien</a>
+    <a href="#live">Live demo</a><a href="#luisteren">Luisteren</a><a href="#meten">Meetwaarden</a><a href="#recept">Recept</a><a href="#zelf">Zelf draaien</a>
   </span>
   <a class="btn ghost" style="padding:8px 14px" href="/">Terug naar de site →</a>
 </nav></div></header>
@@ -31,10 +31,43 @@
   <h1 class="rv" data-d="1">Nederlandse stemmen van <em>21 megabyte.</em></h1>
   <p class="lead rv" data-d="2">tiny-voca is een open recept voor spraakmakers: 4,5 miljoen parameters, 21 MB modelbestand, code en traindata onder Apache-2.0. Hier is dat recept opgebouwd voor het Nederlands, met eigen Nederlandstalige audio en een meetbank die nagaat of een onafhankelijke luisteraar de output echt verstaat. De samples, de cijfers en het experiment dat eerst volledig door de mist vloog staan hieronder.</p>
   <div class="cta rv" data-d="3">
-    <a class="btn gold" href="#luisteren">Direct luisteren ↓</a>
+    <a class="btn gold" href="#live">Live: typ en luister ↓</a>
     <a class="btn ghost" href="#meten">Naar de meetwaarden →</a>
   </div>
   <div class="waveband rv" data-d="4" aria-hidden="true"></div>
+</section>
+
+<!-- ══ LIVE DEMO ══ -->
+<section id="live" class="wrap">
+  <div class="sec-head">
+    <h2 class="rv">Live: <em>typ en luister, het model blijft in je browser.</em></h2>
+    <p class="rv" data-d="1">Er gaat niets naar een server: je tekst wordt uitgesproken door het 22,5 MB grote model op je eigen apparaat. Bij het eerste bezoek laadt 33,5 MB mee: 21,4 MB model, 10,7 MB rekengereedschap en het uitspraakwoordenboek van 1,3 MB. Daarna doet je eigen apparaat het werk, offline. Gemeten in deze browser: 5,1 seconde spraak in 0,19 seconde rekenen; twee metingen lagen op 21 tot 26x realtime op één CPU-thread. Het model praat met de Nederlandse stem Alex, één van de twee die ik getraind heb.</p>
+  </div>
+  <div class="tdemo rv" data-d="2">
+    <div class="texrow">
+      <label for="text">Tekst</label>
+      <span class="exchips">
+        <a href="#text" data-example="Ik was toen nog niet in de wereld. Zou je dan telkens op willen blijven?">Korte vraag</a>
+        <a href="#text" data-example="De computer staat in de hoek van de kamer en doet alles zelf: geen cloud, geen abonnement, geen wachtrij.">Langere zin</a>
+        <a href="#text" data-example="Op dinsdag 27 november begint de training om half twaalf en duurt ongeveer vijfenzestig minuten.">Getallen</a>
+        <a href="#text" data-example="Morgen fietsen we langs de rivier naar de markt. Daar kopen we wat vers fruit en drinken we gezellig een kopje koffie.">Vertelling</a>
+      </span>
+    </div>
+    <textarea id="text" rows="4" maxlength="5000" spellcheck="false">De trein naar Utrecht vertrekt over vijf minuten. Zorg dat je op tijd instapt en vergeet je spullen niet mee te nemen.</textarea>
+    <div class="tctl">
+      <label class="spd">Spreeksnelheid <input id="speed" type="number" min="0.25" max="4" step="0.05" value="1"></label>
+      <button id="play" class="btn gold" disabled>Voorlezen</button>
+      <button id="stop" class="btn ghost" disabled>Stop</button>
+      <button id="save" class="btn ghost" disabled>WAV opslaan</button>
+      <span id="loading" class="tload" role="status">Model laden in je browser <span id="spinner" aria-hidden="true">/</span></span>
+    </div>
+    <p id="error" class="terr" role="alert" hidden></p>
+    <details class="tphones-wrap">
+      <summary>Zie de klanken die het model krijgt</summary>
+      <pre id="phones" class="tphones"></pre>
+    </details>
+    <p class="mnote">De speelcode komt uit <a href="https://github.com/n4ze3m/tiny-voca" target="_blank" rel="noopener">tiny-voca</a> (Apache-2.0), het uitspraakwoordenboek is <a href="https://github.com/espeak-ng/espeak-ng" target="_blank" rel="noopener">eSpeak NG</a> (GPL-3.0) naar WebAssembly gecompileerd. De licentieteksten en de eSpeak-bron staan naast de bundle, de modelgewichten zijn van deze machine.</p>
+  </div>
 </section>
 
 <!-- ══ LUISTEREN ══ -->
@@ -78,7 +111,7 @@
     </aside>
     <article class="tcard tnext rv" data-d="5">
       <h3>Twee eigen stemmen <span class="tstat loop">loopt nu</span></h3>
-      <p class="tsay">De volgende ronde praat met twee stemmen: Sinterklaas en mijn eigen stem. Daarvan zijn 25.082 fragments klaargezet, samen 34,9 uur, gemiddeld 5,01 seconde per fragment, met een gemiddelde woordmatch van 0,984 tussen tekst en geluid.</p>
+      <p class="tsay">De volgende ronde praat met twee stemmen: Sinterklaas en mijn eigen stem. Daarvan staan 25.082 fragments klaar, samen 34,9 uur, gemiddeld 5,01 seconde per fragment, met een gemiddelde woordmatch van 0,984 tussen tekst en geluid. 23.217 daarvan haalden de quality-poort. Eén model met beide stemmen samen is mislukt: de training ging achteruit (mel-fout 0,69 naar 1,15) doordat de twee sprekers heel verschillende toonhoogtes hebben. Nu draaien er twee losse eengestim runs op dezelfde schone data.</p>
       <p class="tverdict pend">Nog geen samples<span>ze komen op deze pagina zodra Whisper ze goed terughoort. De eerste poging door de automatisch uitgelijnde dataset haalde 0 van 15 woorden en staat daarom hieronder bij het mislukte experiment.</span></p>
     </article>
   </div>
@@ -101,7 +134,7 @@
     <div class="trow"><span>Woordfouten, zinnen die het model nooit zag</span><span>20,3% over 8 clips</span><span>geen opgave</span></div>
     <div class="trow"><span>Tempo: verhouding t.o.v. de bron</span><span>0,998</span><span>geen opgave</span></div>
     <div class="trow"><span>Toonhoogte-spreiding</span><span>3,92 halve tonen (bron: 3,93)</span><span>geen opgave</span></div>
-    <div class="trow"><span>Draaien</span><span>4,33 s muurkloktijd voor 4,98 s spraak op CPU</span><span>helemaal in de browser, ~40 MB download bij eerste bezoek</span></div>
+    <div class="trow"><span>Draaien</span><span>4,33 s muurkloktijd voor 4,98 s spraak op CPU; in de browser 26x realtime (gemeten, WASM, één thread)</span><span>helemaal in de browser, ~40 MB download bij eerste bezoek</span></div>
     <div class="trow"><span>Licentie</span><span>Apache-2.0 code, opnames onder de licentie van de gebruikte stem</span><span>Apache-2.0 code en gewichten</span></div>
   </div>
   <p class="mnote rv" data-d="2">Waarom de echte opnames hier slechter scoren dan het model: de judge luistert naar gecomprimeerd studio-materiaal met ademhaling en omgevingsruis. Een model dat schone 24 kHz-golven uitspreekt wordt daardoor makkelijker verstaan dan de opname zelf. Dat is geen bewijs van superioriteit, wel een eerlijke nulmeting.</p>
@@ -155,5 +188,7 @@
 </div></footer>
 
 <script src="/assets/tts.js" defer></script>
+<script src="player.js" defer></script>
+<script type="module" src="app.mjs"></script>
 </body>
 </html>
