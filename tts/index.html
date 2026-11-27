@@ -111,7 +111,7 @@
     </aside>
     <article class="tcard tnext rv" data-d="5">
       <h3>Twee eigen stemmen <span class="tstat loop">loopt nu</span></h3>
-      <p class="tsay">De volgende ronde praat met twee stemmen: Sinterklaas en mijn eigen stem. Daarvan staan 25.082 fragments klaar, samen 34,9 uur, gemiddeld 5,01 seconde per fragment, met een gemiddelde woordmatch van 0,984 tussen tekst en geluid. 23.217 daarvan haalden de quality-poort. Eén model met beide stemmen samen is mislukt: de training ging achteruit (mel-fout 0,69 naar 1,15) doordat de twee sprekers heel verschillende toonhoogtes hebben. Nu draaien er twee losse eengestim runs op dezelfde schone data.</p>
+      <p class="tsay">De volgende ronde praat met twee stemmen: Sinterklaas en mijn eigen stem. Daarvan staan 25.082 fragments klaar, samen 34,9 uur, gemiddeld 5,01 seconde per fragment, met een gemiddelde woordmatch van 0,984 tussen tekst en geluid. Een model met beide stemmen samen lukte niet, en los per stem ook nog niet. De oorzaak bleek niet het aantal sprekers maar de labeltekst: die was oud geschreven terwijl het geluid modern klinkt. Nu draaien de trainingen op een set waar de labeltekst door het gehoorde woord is vervangen; 18.879 fragments (circa 26 uur) haalden die strengere poort.</p>
       <p class="tverdict pend">Nog geen samples<span>ze komen op deze pagina zodra Whisper ze goed terughoort. De eerste poging door de automatisch uitgelijnde dataset haalde 0 van 15 woorden en staat daarom hieronder bij het mislukte experiment.</span></p>
     </article>
   </div>
@@ -156,7 +156,9 @@
   <div class="tfail rv" data-d="2">
     <h3>Wat er misging, en blijft staan</h3>
     <p>De eerste poging tot een model met twee eigen stemmen haalde <b>0 van de 15 woorden</b> in de hoorbaarheidstest: onverstaanbaar gekraak. De schuldige was niet het model, maar de automatische klankuitlijner uit het recept (wav2vec2-lv-60, afgericht op espeak-klanken). Op onze eigen leraar-audio gaf die 27,9 procent van de klanken een duur van één enkel frame en individuele klanken van 2,1 seconde. Na de quality-poort hielden van 18.757 fragments slechts 670 over.</p>
-    <p>De reparatie was geen nieuwer model maar betere labels: woordtimings van Whisper als ruggengraat, met energie-gewogen verdeling binnen elk woord. Dat profiel raakt het referentieprofiel van de werkende dataset: gemiddeld 4,7 frames per klank, langste klank 0,14 tot 0,34 seconde, terwijl de uitlijner daar 26 procent één-frame-klanken neerzette.</p>
+    <p>De eerste reparatie was geen nieuwer model maar betere labels: woordtimings van Whisper als ruggengraat, met energie-gewogen verdeling binnen elk woord. Dat profiel raakte het referentieprofiel van de werkende dataset (gemiddeld 4,7 frames per klank, langste klank 0,14 tot 0,34 seconde). Het model werd er toch niet begrijpelijk door: nog steeds 0 van de 15 woorden, en dat gold ook voor losse modellen per stem.</p>
+    <p>De echte oorzaak bleek ouder dan de uitlijner: de bronneteksten zijn 19e-eeuws geschreven (<b>“Myn waarde Vriend”, “niemant sonder het Doopsel”, “J. de Groot”</b>) terwijl de leeraar modern Nederlands spreekt. Met de verbeterde uitlijner vond de labelmaker daarom <b>13,3 procent van de gehoorde woorden niet terug</b> in de labeltekst, en <b>36,5 procent van de klanken</b> kwam op de noodmaat van 2 frames (0,02 seconde) terecht. De werkende eengestim dataset met moderne teksten zit op 17,2 procent. Het model kreeg een klankenreeks die niet bij het geluid paste en kon dan alleen geruis voorspellen.</p>
+    <p>De reparatie nu: de labeltekst is vervangen door wat Whisper daadwerkelijk hoorde, met de leestekens van de oorspronkelijke zin, en de poort laat rijen af die nog meer dan 30 procent kortgemeten klanken bevatten. 79,4 procent van de fragments, 18.879 stuks en circa 26 uur, haalt die lat. De rest blijft buiten beeld totdat uitspraak en tekst het eens zijn.</p>
   </div>
 </section>
 
