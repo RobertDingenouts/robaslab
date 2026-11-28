@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nederlandse TTS van 21 MB: samples, meetwaarden en het recept | Robas Lab</title>
+<title>Nederlandse TTS van 22,5 MB: samples, meetwaarden en het recept | Robas Lab</title>
 <meta name="description" content="Een Nederlandstalige mini-TTS van 4,5 miljoen parameters, gebouwd naar het open recept van tiny-voca. Samples, eigen meetwaarden, het mislukte experiment en hoe je het zelf draait.">
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -28,8 +28,8 @@
 
 <section class="thero wrap">
   <span class="kicker rv">Stem · TTS · 4,5 miljoen parameters<span class="dot"></span></span>
-  <h1 class="rv" data-d="1">Nederlandse stemmen van <em>21 megabyte.</em></h1>
-  <p class="lead rv" data-d="2">tiny-voca is een open recept voor spraakmakers: 4,5 miljoen parameters, 21 MB modelbestand, code en traindata onder Apache-2.0. Hier is dat recept opgebouwd voor het Nederlands, met eigen Nederlandstalige audio en een meetbank die nagaat of een onafhankelijke luisteraar de output echt verstaat. De samples, de cijfers en het experiment dat eerst volledig door de mist vloog staan hieronder.</p>
+  <h1 class="rv" data-d="1">Nederlandse stemmen van <em>22,5 megabyte.</em></h1>
+  <p class="lead rv" data-d="2">tiny-voca is een open recept voor spraakmakers: 4,5 miljoen parameters, 22,5 MB modelbestand, code en traindata onder Apache-2.0. Hier is dat recept opgebouwd voor het Nederlands, met eigen Nederlandstalige audio en een meetbank die nagaat of een onafhankelijke luisteraar de output echt verstaat. De samples, de cijfers en het experiment dat eerst volledig door de mist vloog staan hieronder.</p>
   <div class="cta rv" data-d="3">
     <a class="btn gold" href="#live">Live: typ en luister ↓</a>
     <a class="btn ghost" href="#meten">Naar de meetwaarden →</a>
@@ -41,7 +41,7 @@
 <section id="live" class="wrap">
   <div class="sec-head">
     <h2 class="rv">Live: <em>typ en luister, het model blijft in je browser.</em></h2>
-    <p class="rv" data-d="1">Er gaat niets naar een server: je tekst wordt uitgesproken door het 22,5 MB grote model op je eigen apparaat. Bij het eerste bezoek laadt 33,5 MB mee: 21,4 MB model, 10,7 MB rekengereedschap en het uitspraakwoordenboek van 1,3 MB. Daarna doet je eigen apparaat het werk, offline. Gemeten in deze browser: 5,1 seconde spraak in 0,19 seconde rekenen; twee metingen lagen op 21 tot 26x realtime op één CPU-thread. Het model praat met de Nederlandse stem Alex, één van de twee die ik getraind heb.</p>
+    <p class="rv" data-d="1">Er gaat niets naar een server: je tekst wordt uitgesproken door het 22,5 MB grote model op je eigen apparaat. Bij het eerste bezoek laadt 35,2 MB mee: 22,5 MB model, 11,3 MB rekengereedschap en 1,4 MB uitspraakwoordenboek. Daarna doet je eigen apparaat het werk, offline. Gemeten in deze browser: 5,1 seconde spraak in 0,19 seconde rekenen; twee metingen lagen op 21 tot 26x realtime op één CPU-thread. Het model praat met de Nederlandse stem Alex. De tweede eigen stem die ik probeerde is niet begrijpelijk geworden; de meetwaarden daarvan staan bij het mislukte experiment.</p>
   </div>
   <div class="tdemo rv" data-d="2">
     <div class="texrow">
@@ -66,7 +66,7 @@
       <summary>Zie de klanken die het model krijgt</summary>
       <pre id="phones" class="tphones"></pre>
     </details>
-    <p class="mnote">De speelcode komt uit <a href="https://github.com/n4ze3m/tiny-voca" target="_blank" rel="noopener">tiny-voca</a> (Apache-2.0), het uitspraakwoordenboek is <a href="https://github.com/espeak-ng/espeak-ng" target="_blank" rel="noopener">eSpeak NG</a> (GPL-3.0) naar WebAssembly gecompileerd. De licentieteksten en de eSpeak-bron staan naast de bundle, de modelgewichten zijn van deze machine. De browserketen is nagerekend met de verificatiestap van het recept: de WASM-klanken zijn identiek aan die van de desktop-eSpeak (zes testteksten, klank-id's en klemtoon), en het ONNX-model wijkt 0,02 tot 0,09 procent af van PyTorch.</p>
+    <p class="mnote">De speelcode komt uit <a href="https://github.com/n4ze3m/tiny-voca" target="_blank" rel="noopener">tiny-voca</a> (Apache-2.0), het uitspraakwoordenboek is <a href="https://github.com/espeak-ng/espeak-ng" target="_blank" rel="noopener">eSpeak NG</a> (GPL-3.0) naar WebAssembly gecompileerd. De licentieteksten en de eSpeak-bron staan naast de bundle, de modelgewichten zijn van deze machine. De browserketen is nagerekend met de verificatiestap van het recept: de WASM-klanken zijn identiek aan die van de desktop-eSpeak (zes testteksten, klank-id's en klemtoon), en het ONNX-model wijkt 0,02 tot 0,09 procent af van PyTorch. Het modelbestand op deze pagina is byte voor byte identiek aan de export van het 20.000-stappenmodel dat nu op deze machine staat, gecontroleerd op 28 november 2026.</p>
   </div>
 </section>
 
@@ -99,20 +99,21 @@
       <h3>Wat er in het model zit</h3>
       <dl>
         <dt>Parameters</dt><dd>4.537.675</dd>
-        <dt>Modelbestand</dt><dd>21,4 MB (ONNX, float32)</dd>
+        <dt>Modelbestand</dt><dd>22,5 MB (ONNX, float32)</dd>
         <dt>Geluid</dt><dd>24 kHz, mono</dd>
-        <dt>Traindata</dt><dd>15.985 uitspraken, 9,5 uur Nederlands</dd>
+        <dt>Traindata</dt><dd>15.985 uitspraken, 9,5 uur Nederlands, uitgesproken door de open Piper-stem Alex</dd>
         <dt>Training</dt><dd>20.000 stappen, 1,5 GB VRAM piek op RTX 5090</dd>
-        <dt>Inference</dt><dd>4,98 s spraak in 4,33 s op CPU, 680 MB werkgeheugen</dd>
-        <dt>Stemmen</dt><dd>1 (Alex, publieke Nederlandse opnames)</dd>
+        <dt>Inference</dt><dd>4,98 s spraak in 4,33 s op CPU (27 november), 5,48 s spraak in 6,14 s op CPU terwijl de box andere taken draaide (28 november), 680 MB werkgeheugen</dd>
+        <dt>Stemmen</dt><dd>1 (Alex, de Piper-stem die als leraar diende)</dd>
+        <dt>Keuring</dt><dd>182 van 194 woorden goed op twaalf vaste testzinnen (93,8 procent, Whisper large-v3, 28 november)</dd>
         <dt>Licenties</dt><dd>code Apache-2.0, eSpeak NG Apartgehouden onder GPL-3.0</dd>
       </dl>
-      <p class="mnote">Gemeten op eigen machine (RTX 5090, 24 cores), 27 november 2026. De CPU-meting is genomen terwijl de box verder belast was, dus 4,33 seconde is een bovenkant.</p>
+      <p class="mnote">Gemeten op eigen machine (RTX 5090, 24 cores), 27 november 2026. De CPU-meting is genomen terwijl de box verder belast was, dus 4,33 seconde is een bovenkant. De trainingsaudio is de stem Alex uit <a href="https://huggingface.co/rhasspy/piper-voices" target="_blank" rel="noopener">Piper Voices</a>, door die stem zelf uitgesproken; de teksten komen uit OHF-Voice Alex-transcripties, Common Voice (nl) en eigen zinnen, zoals het <a href="https://github.com/tetsuo/tiny-voca-nl" target="_blank" rel="noopener">Nederlandse recept</a> zelf beschrijft.</p>
     </aside>
     <article class="tcard tnext rv" data-d="5">
-      <h3>Twee eigen stemmen <span class="tstat loop">loopt nu</span></h3>
-      <p class="tsay">De volgende ronde praat met twee stemmen: Sinterklaas en mijn eigen stem. Daarvan staan 25.082 fragments klaar, samen 34,9 uur, gemiddeld 5,01 seconde per fragment, met een gemiddelde woordmatch van 0,984 tussen tekst en geluid. Een model met beide stemmen samen lukte niet, en los per stem ook nog niet. De oorzaak bleek niet het aantal sprekers maar de labeltekst: die was oud geschreven terwijl het geluid modern klinkt. Nu draaien de trainingen op een set waar de labeltekst door het gehoorde woord is vervangen; 18.879 fragments (circa 26 uur) haalden die strengere poort.</p>
-      <p class="tverdict pend">Nog geen samples<span>ze komen op deze pagina zodra Whisper ze goed terughoort. De eerste poging door de automatisch uitgelijnde dataset haalde 0 van 15 woorden en staat daarom hieronder bij het mislukte experiment.</span></p>
+      <h3>Twee eigen stemmen <span class="tstat">vastgelopen op het materiaal</span></h3>
+      <p class="tsay">Sinterklaas en mijn eigen stem, elk door VibeVoice-7B uit dezelfde zinnen voortgebracht, 25.082 fragments van samen 34,9 uur. Laatste stand, gemeten op 28 november met Whisper large-v3 aan één vaste zin van veertien woorden: het beste model spreekt 9 van de 14 woorden verstaanbaar uit met een vlakke toon (17 Hz toonspreiing). De poging die wél goed ademt, 3 pauzes per clip in plaats van 0,25, verprat 10 van de 14 woorden. Twee ruilen, geen winst: adem erin brengen kostte meer dan het opbracht.</p>
+      <p class="tverdict mid">29 tot 64 procent van de woorden goed<span>Met dezelfde judge gehoord. Fijn-tunen repareert een zwakke kloon niet, dus de volgorde is nu: eerst schoon lesmateriaal, waarschijnlijk echte opnames van mijn eigen stem, dan pas weer trainen. De eerste poging door de automatisch uitgelijnde dataset haalde 0 van 15 woorden en staat hieronder bij het mislukte experiment.</span></p>
     </article>
   </div>
 </section>
@@ -126,18 +127,27 @@
   <div class="ttable rv" data-d="1">
     <div class="trow thead"><span>Meting</span><span>ons Nederlandstalige model</span><span>n4ze3m tiny-voca (hun opgave)</span></div>
     <div class="trow"><span>Parameters</span><span>4.537.675</span><span>4.537.291</span></div>
-    <div class="trow"><span>Modelbestand</span><span>21,4 MB ONNX, float32</span><span>21 MB ONNX, float32</span></div>
+    <div class="trow"><span>Modelbestand</span><span>22,5 MB ONNX, float32</span><span>21,4 MB ONNX, float32</span></div>
     <div class="trow"><span>Geluid</span><span>24 kHz mono</span><span>24 kHz mono</span></div>
-    <div class="trow"><span>Traindata</span><span>9,5 uur Nederlands, 15.985 uitspraken</span><span>17,6 uur Engels, synthetisch</span></div>
+    <div class="trow"><span>Traindata</span><span>9,5 uur Nederlands, 15.985 uitspraken, synthetisch uit de Piper-stem Alex</span><span>17,6 uur Engels, synthetisch</span></div>
     <div class="trow"><span>Stemmen</span><span>1</span><span>2 (F2 en M2, Amerikaans-Engels)</span></div>
-    <div class="trow"><span>Woordfouten, achtergehouden testzinnen</span><span>2,1% (de echte opnames: 7,1% onder dezelfde judge)</span><span>geen Nederlandstalige meting</span></div>
+    <div class="trow"><span>Woordfouten, achtergehouden testzinnen</span><span>2,1% (echte opnames van een andere spreker: 7,1% onder dezelfde judge)</span><span>geen Nederlandstalige meting</span></div>
     <div class="trow"><span>Woordfouten, zinnen die het model nooit zag</span><span>20,3% over 8 clips</span><span>geen opgave</span></div>
     <div class="trow"><span>Tempo: verhouding t.o.v. de bron</span><span>0,998</span><span>geen opgave</span></div>
     <div class="trow"><span>Toonhoogte-spreiding</span><span>3,92 halve tonen (bron: 3,93)</span><span>geen opgave</span></div>
+    <div class="trow"><span>Tempo terwijl het praat</span><span>3,13 woorden per seconde, met 3 binnenpauzes in 13 woorden (gemeten 28 november)</span><span>geen opgave</span></div>
     <div class="trow"><span>Draaien</span><span>4,33 s muurkloktijd voor 4,98 s spraak op CPU; in de browser 26x realtime (gemeten, WASM, één thread)</span><span>helemaal in de browser, ~40 MB download bij eerste bezoek</span></div>
     <div class="trow"><span>Licentie</span><span>Apache-2.0 code, opnames onder de licentie van de gebruikte stem</span><span>Apache-2.0 code en gewichten</span></div>
   </div>
   <p class="mnote rv" data-d="2">Waarom de echte opnames hier slechter scoren dan het model: de judge luistert naar gecomprimeerd studio-materiaal met ademhaling en omgevingsruis. Een model dat schone 24 kHz-golven uitspreekt wordt daardoor makkelijker verstaan dan de opname zelf. Dat is geen bewijs van superioriteit, wel een eerlijke nulmeting.</p>
+  <h3 class="rv" data-d="2" style="margin-top:30px">Drie stemmen naast elkaar, <em>28 november gemeten.</em></h3>
+  <div class="ttable rv" data-d="3">
+    <div class="trow thead"><span>Stem en model</span><span>Grootte en processor</span><span>Verstaanbaarheid en ritme</span></div>
+    <div class="trow"><span>Alex, ons eigen model van 4.537.675 parameters</span><span>22,5 MB ONNX, 0,9x realtime op een box met andere taken draaiend</span><span>182 van 194 woorden goed (93,8%), 3,13 woorden per seconde pratend, 3 pauzes in 13 woorden</span></div>
+    <div class="trow"><span>noor, Canora Dutch, ontworpen stem</span><span>115 MB, 4,6x realtime</span><span>215 van 219 woorden goed (98,2%), 2,96 woorden per seconde pratend, 2 pauzes</span></div>
+    <div class="trow"><span>daan, Canora Dutch, ontworpen stem</span><span>115 MB, 8,0x realtime</span><span>217 van 219 woorden goed (99,1%), 2,70 woorden per seconde pratend, 4 pauzes</span></div>
+  </div>
+  <p class="mnote rv" data-d="4">Canora is niet ons model maar de maatstaf: ontworpen Nederlandse stemmen onder Apache-2.0, vijf keer zo groot, met een Kokoro-ruggengraat. Het verschil zit in de les en niet in de architectuur: dezelfde architectuur van 4,5 miljoen parameters haalt 93,8 procent op schone synthetische lessen en 29 tot 64 procent op kloonlessen van mijn eigen stem. Canora-clips zijn hier nog niet opnieuw te labelen: de eigen uitlijner is Engelstalig en de proef met een Piper-leraar staat pas op 24 clips, 24 aanvaard, 0 verworpen.</p>
 </section>
 
 <!-- ══ RECEPT ══ -->
@@ -147,11 +157,11 @@
     <p class="rv" data-d="1">Het model zelf is klein en saai. Al het werk zit in de data eraan vooraf, en precies dáárom is het recept open gezet.</p>
   </div>
   <div class="tsteps rv" data-d="1">
-    <div class="tstep"><b>1</b><div><h4>Leraar-audio halen</h4><p>Een groot open source model (VibeVoice-7B, MIT) leest teksten voor in de stem die getraind moet worden. Voor de eigen stemmen: 14.206 fragments, 71 uur.</p></div></div>
+    <div class="tstep"><b>1</b><div><h4>Leraar-audio halen</h4><p>Een groot open source model (VibeVoice-7B, MIT) leest teksten voor in de stem die getraind moet worden. Voor de eigen stemmen: 14.206 fragments, 71 uur. Voor het werkende eengestimmodel was de leraar een kleinere, open Piper-stem, geen VibeVoice.</p></div></div>
     <div class="tstep"><b>2</b><div><h4>Knippen op woordtimings</h4><p>Whisper geeft per woord een begin- en eindtijd. Een fragment blijft staan als de gehoorde woorden voor minstens 85 procent overeenkomen met de brontekst. Dit is de stap die de eerste poging kapotmaakte.</p></div></div>
     <div class="tstep"><b>3</b><div><h4>Klankduuren verdelen</h4><p>eSpeak NG zet tekst om in klanken. Within elk woord wordt de gemeten energie van het geluid gebruikt om die klanken te verdelen, zodat er nooit stilte in een klankduur staat.</p></div></div>
     <div class="tstep"><b>4</b><div><h4>Het kleine model trainen</h4><p>4,5 miljoen parameters: mel-spectrogram erin, brontrein-golf eruit, 20.000 stappen, 1,5 GB VRAM. Met een discriminator die pas na 8.000 stappen begint.</p></div></div>
-    <div class="tstep"><b>5</b><div><h4>Calibreren en exporteren</h4><p>De excitation-calibratie past de stemband-voorspelling aan op 256 trainingszinnen. Zonder die stap klinkt de output als ruis met een kraak erdoor. Daarna: ONNX-export van 21 MB.</p></div></div>
+    <div class="tstep"><b>5</b><div><h4>Calibreren en exporteren</h4><p>De excitation-calibratie past de stemband-voorspelling aan op 256 trainingszinnen. Zonder die stap klinkt de output als ruis met een kraak erdoor. Daarna: ONNX-export van 22,5 MB.</p></div></div>
   </div>
   <div class="tfail rv" data-d="2">
     <h3>Wat er misging, en blijft staan</h3>
@@ -172,9 +182,9 @@
     <pre><code>python -m tiny_voca.infer \
   --checkpoint &lt;checkpoint&gt; \
   --voice sint \
-  --text "Hoor eens, dit is een model van eenentwintig megabyte." \
+  --text "Hoor eens, dit is een model van tweeëntwintig megabyte." \
   --output uit.wav --device cpu</code></pre>
-    <p class="tdeps">Vereisten: Python, het trainingsframework van het recept (Apache-2.0) en eSpeak NG als frontend. Het modelbestand is 21 MB, het inlezen kost enkele honderden megabytes werkgeheugen.</p>
+    <p class="tdeps">Vereisten: Python, het trainingsframework van het recept (Apache-2.0) en eSpeak NG als frontend. Het modelbestand is 22,5 MB, het inlezen kost enkele honderden megabytes werkgeheugen.</p>
   </div>
   <div class="tlinks rv" data-d="2">
     <div class="tlink"><h4>Het originele recept</h4><p><a href="https://github.com/n4ze3m/tiny-voca" target="_blank" rel="noopener">tiny-voca op GitHub</a> en het <a href="https://tiny-voca.n4ze3m.com/" target="_blank" rel="noopener">bijbehorende demopaginaat</a> dat het model volledig in de browser laat draaien, met een Python-runtime voor de fonemizer.</p></div>
