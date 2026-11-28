@@ -70,8 +70,8 @@
 
 <!-- ══ MARQUEE ══ -->
 <div class="marquee"><div class="track">
-  <span><b>Qwen3.8-Flash-Next 125B</b><i>·</i><b>Qwen-Image 2.1</b><i>·</i><b>eigen LoRA-trainingen</b><i>·</i><b>MOSS-Image turbo</b><i>·</i><b>MiniMax H3 video</b><i>·</i><b>Wan 2.2</b><i>·</i><b>VibeVoice TTS</b><i>·</i><b>stemklonk dots.tts</b><i>·</i><b>faster-whisper NL</b><i>·</i><b>YuE2 nummers</b><i>·</i><b>ACE-Step</b><i>·</i><b>Strata + DFlash2</b><i>·</i></span>
-  <span aria-hidden="true"><b>Qwen3.8-Flash-Next 125B</b><i>·</i><b>Qwen-Image 2.1</b><i>·</i><b>eigen LoRA-trainingen</b><i>·</i><b>MOSS-Image turbo</b><i>·</i><b>MiniMax H3 video</b><i>·</i><b>Wan 2.2</b><i>·</i><b>VibeVoice TTS</b><i>·</i><b>stemklonk dots.tts</b><i>·</i><b>faster-whisper NL</b><i>·</i><b>YuE2 nummers</b><i>·</i><b>ACE-Step</b><i>·</i><b>Strata + DFlash2</b><i>·</i></span>
+  <span><b>Qwen3.8-Flash-Next 125B</b><i>·</i><b>Qwen-Image 2.1</b><i>·</i><b>Inkling-2-Mini</b><i>·</i><b>MOSS-Image turbo</b><i>·</i><b>MiniMax H3 video</b><i>·</i><b>Wan 2.2</b><i>·</i><b>VibeVoice TTS</b><i>·</i><b>IndexTTS kloonstem</b><i>·</i><b>faster-whisper NL</b><i>·</i><b>YuE2 nummers</b><i>·</i><b>ACE-Step</b><i>·</i><b>Strata + DFlash2</b><i>·</i></span>
+  <span aria-hidden="true"><b>Qwen3.8-Flash-Next 125B</b><i>·</i><b>Qwen-Image 2.1</b><i>·</i><b>Inkling-2-Mini</b><i>·</i><b>MOSS-Image turbo</b><i>·</i><b>MiniMax H3 video</b><i>·</i><b>Wan 2.2</b><i>·</i><b>VibeVoice TTS</b><i>·</i><b>IndexTTS kloonstem</b><i>·</i><b>faster-whisper NL</b><i>·</i><b>YuE2 nummers</b><i>·</i><b>ACE-Step</b><i>·</i><b>Strata + DFlash2</b><i>·</i></span>
 </div></div>
 
 <!-- ══ SHOWCASE ══ -->
@@ -360,23 +360,20 @@
 <section id="modelpark" class="wrap">
   <div class="sec-head">
     <h2 class="rv">Het modelpark: <em>alles</em> draait lokaal</h2>
-    <p class="rv" data-d="1">Modellen die hier draaien of hebben gedraaid: 40+ stuks over zeven disciplines, op één RTX 5090. Geen abonnementen, elke waarde met de config erbij.</p>
-    <div class="row rv" data-d="2" style="gap:12px;margin-top:12px;flex-wrap:wrap">
-      <span class="badge"><b>40+</b> modellen</span><span class="badge"><b>7</b> disciplines</span><span class="badge"><b>1</b> GPU</span><span class="badge"><b>0</b> cloud-API's</span>
-    </div>
+    <p class="rv" data-d="1">Modellen die hier daadwerkelijk draaien, over zeven disciplines, op één RTX 5090. Geen abonnementen, elke waarde met de config erbij.</p>
   </div>
   <div class="mparks">
     <article class="mcard rv" data-d="1"><h3>Taal &amp; agents</h3>
-      <ul><li>Qwen3.8-Flash-Next 125B: eigen variant, 261 t/s gemeten</li><li>Qwen3.8-27B Uncensored</li><li>Qwen3-30B-A3B · NVFP4</li><li>GLM-4.5V: multimodaal, kijkt</li></ul>
-      <p class="mnote">Serveert via ExLlamaV3 · llama.cpp · Strata + DFlash2 · gemeten: 261 t/s bij 262K context, 342 t/s bij 8K context (november, meetrepo)</p></article>
+      <ul><li>Qwen3.8-Flash-Next 125B: eigen variant, 261 t/s gemeten</li><li>Inkling-2-Mini 26,4B: gemeten 408 t/s chat, 754 t/s agent</li><li>Qwen3.8-27B · NVFP4: de dagelijkse chat-backend</li><li>Qwen3.6-35B-A3B · NInfer: lichtste MoE-optie</li></ul>
+      <p class="mnote">Serveert via Strata + DFlash2 · NInfer · llama.cpp · ExLlamaV3 · gemeten: 261 t/s bij 262K context, 342 t/s bij 8K context (november, meetrepo)</p></article>
     <article class="mcard rv" data-d="2"><h3>Beeld</h3>
-      <ul><li>Qwen-Image 2.1: ook NVFP4</li><li>MOSS-Image SFT + 8-staps turbo-LoRA</li><li>Eigen LoRA-trainingen: huisstijl, tekstposters</li><li>Bonsai Image 4B: licht en snel</li></ul>
-      <p class="mnote">Getraind en gegenereerd in ComfyUI / Wan2GP</p></article>
+      <ul><li>Qwen-Image 2.1: bf16, int8 en NVFP4</li><li>MOSS-Image SFT + 8-staps turbo-LoRA</li></ul>
+      <p class="mnote">Draait in ComfyUI en Wan2GP</p></article>
     <article class="mcard rv" data-d="3"><h3>Video</h3>
-      <ul><li>MiniMax H3: tekst/beeld/ref → video, 4–8 stappen</li><li>Wan 2.2, via Wan2GP</li><li>Kling 2.0</li></ul>
+      <ul><li>MiniMax H3: tekst, beeld en referentie naar video, 4–8 stappen</li><li>Wan 2.2, via Wan2GP</li></ul>
       <p class="mnote">Van prompt tot clip op eigen machine. Films op deze site zijn zo gemaakt.</p></article>
     <article class="mcard rv" data-d="4"><h3>Stem · TTS</h3>
-      <ul><li>VibeVoice-7B: lange dialoog, natuurlijk</li><li>Audio8-TTS Realistic-Air</li><li>dots.tts: klonen van mijn eigen stem</li></ul>
+      <ul><li>VibeVoice-7B: lange dialoog, natuurlijk</li><li>IndexTTS 2.5: kloonstem en vertelling</li><li>Audio8-TTS Realistic-Air</li></ul>
       <p class="mnote">Voor voiceovers, video's en agent-gesprekken. Het mini-model van 22,5 MB met eigen meetwaarden: <a href="/tts/">robaslab.nl/tts</a></p></article>
     <article class="mcard rv" data-d="5"><h3>Spraak → tekst · STT</h3>
       <ul><li>faster-whisper large-v3</li><li>wav2vec2 XLSR: speciaal Nederlands</li><li>Parakeet: snelle transcriptie</li><li>MossFormer2: ruis weg vóór het transcribeert</li></ul>
